@@ -1,6 +1,6 @@
 import { Button, Card, CardBody, CardFooter, CardHeader, Heading, SimpleGrid, Text } from '@chakra-ui/react'
 
-export const ShowCase = () => {
+const ShowCase = () => {
   return (
     <SimpleGrid spacing={4} templateColumns='repeat(auto-fill, minmax(200px, 1fr))'>
       <Card>
@@ -39,3 +39,5 @@ export const ShowCase = () => {
     </SimpleGrid>
   )
 }
+
+export default ShowCase;

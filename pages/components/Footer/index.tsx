@@ -1,7 +1,7 @@
 import { Box, ButtonGroup, Divider, IconButton, Stack, Text } from '@chakra-ui/react'
 import { FaGithub, FaLinkedin, FaTwitter } from 'react-icons/fa'
 
-export const Footer = () => (
+const Footer = () => (
   <Box p={10} as="footer" role="contentinfo">
     {/* <Stack
       spacing="8"
@@ -75,3 +75,5 @@ export const Footer = () => (
     </Stack>
   </Box>
 )
+
+export default Footer;

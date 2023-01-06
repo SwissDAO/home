@@ -1,10 +1,10 @@
 import { Flex } from '@chakra-ui/react';
 import { useEffect, useState } from 'react';
 import { useAccount } from 'wagmi';
-import { Content } from './components/Content';
-import { Footer } from './components/Footer/Footer';
-import { Main } from './components/Main/Main';
-import { Navbar } from './components/Navbar';
+import Content from './components/Content';
+import Footer from './components/Footer';
+import Main from './components/Main';
+import Navbar from './components/Navbar';
 
 export default function Home() {
   const { isConnected } = useAccount();

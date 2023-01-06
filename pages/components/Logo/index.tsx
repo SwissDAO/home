@@ -1,4 +1,4 @@
-export const Logo = () => (
+const Logo = () => (
   <svg width="64" height="64" viewBox="0 0 126 126" fill="none" xmlns="http://www.w3.org/2000/svg">
     <ellipse cx="13.5379" cy="11.1281" rx="10.8306" ry="11.1281" fill="#E31D1C" />
     <ellipse cx="13.5379" cy="44.7893" rx="10.8306" ry="11.1281" fill="#E31D1C" />
@@ -28,3 +28,5 @@ export const Logo = () => (
   </svg>
 
 )
+
+export default Logo;

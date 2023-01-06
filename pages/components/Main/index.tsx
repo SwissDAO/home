@@ -1,7 +1,7 @@
-import { Container, Flex, FlexProps, Text } from '@chakra-ui/react'
-import { ShowCase } from '../Card'
+import { Container, FlexProps, Text } from '@chakra-ui/react'
+import ShowCase from '../Card'
 
-export const Main = (props: FlexProps) => {
+const Main = (props: FlexProps) => {
   return (
     <Container as="main" role="main" direction="column" flex="1" py="16" {...props}>
       {/* <Container flex="1">
@@ -12,3 +12,5 @@ export const Main = (props: FlexProps) => {
     </Container>
   )
 }
+
+export default Main;

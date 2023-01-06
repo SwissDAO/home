@@ -2,9 +2,9 @@ import {
   Box, HStack, useColorModeValue
 } from '@chakra-ui/react'
 import { ConnectButton } from '@rainbow-me/rainbowkit'
-import { Logo } from '../Logo/Logo'
+import Logo from '../Logo'
 
-export const Navbar = () => {
+const Navbar = () => {
   return (
     <Box as="nav" p={5} boxShadow={useColorModeValue('sm', 'sm-dark')}>
       <HStack justify="space-between">
@@ -14,3 +14,5 @@ export const Navbar = () => {
     </Box>
   )
 }
+
+export default Navbar;

@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import { useAccount, useContractRead } from "wagmi";
 import MEMBERCARD_ABI from '../../../artifacts/Membercard.json';
 
-export const Content = ({ account }: { account: boolean }) => {
+const Content = ({ account }: { account: boolean }) => {
   const { address } = useAccount();
   const [balance, setBalance] = useState(0)
 
@@ -55,3 +55,5 @@ export const Content = ({ account }: { account: boolean }) => {
     </Grid>
   )
 }
+
+export default Content;
