@@ -13,17 +13,13 @@ export default function Home() {
   // https://github.com/vercel/next.js/discussions/35773 -> 🙂 smh
   useEffect(() => {
     setAccount(isConnected);
-  }, [isConnected])
+  }, [isConnected]);
 
   return (
     <Flex direction="column" flex="1">
       <Navbar />
-      {account ? (
-        <Content account={account} />
-      ) : (
-        <Main />
-      )}
+      {account ? <Content account={account} /> : <Main />}
       <Footer />
     </Flex>
-  )
+  );
 }

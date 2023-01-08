@@ -1,8 +1,6 @@
-import {
-  Box, HStack, useColorModeValue
-} from '@chakra-ui/react'
-import { ConnectButton } from '@rainbow-me/rainbowkit'
-import Logo from '../Logo'
+import { Box, HStack, useColorModeValue } from '@chakra-ui/react';
+import { ConnectButton } from '@rainbow-me/rainbowkit';
+import Logo from '../Logo';
 
 const Navbar = () => {
   return (
@@ -12,7 +10,7 @@ const Navbar = () => {
         <ConnectButton />
       </HStack>
     </Box>
-  )
-}
+  );
+};
 
 export default Navbar;

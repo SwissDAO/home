@@ -1,5 +1,12 @@
-import { Box, ButtonGroup, Divider, IconButton, Stack, Text } from '@chakra-ui/react'
-import { FaGithub, FaLinkedin, FaTwitter } from 'react-icons/fa'
+import {
+  Box,
+  ButtonGroup,
+  Divider,
+  IconButton,
+  Stack,
+  Text,
+} from '@chakra-ui/react';
+import { FaGithub, FaLinkedin, FaTwitter } from 'react-icons/fa';
 
 const Footer = () => (
   <Box p={10} as="footer" role="contentinfo">
@@ -69,11 +76,21 @@ const Footer = () => (
           aria-label="LinkedIn"
           icon={<FaLinkedin fontSize="1.25rem" />}
         />
-        <IconButton as="a" href="https://github.com/SwissDAO" aria-label="GitHub" icon={<FaGithub fontSize="1.25rem" />} />
-        <IconButton as="a" href="https://twitter.com/swissDAOspace" aria-label="Twitter" icon={<FaTwitter fontSize="1.25rem" />} />
+        <IconButton
+          as="a"
+          href="https://github.com/SwissDAO"
+          aria-label="GitHub"
+          icon={<FaGithub fontSize="1.25rem" />}
+        />
+        <IconButton
+          as="a"
+          href="https://twitter.com/swissDAOspace"
+          aria-label="Twitter"
+          icon={<FaTwitter fontSize="1.25rem" />}
+        />
       </ButtonGroup>
     </Stack>
   </Box>
-)
+);
 
 export default Footer;
