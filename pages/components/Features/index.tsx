@@ -1,26 +1,15 @@
 import {
-  Button,
   Card,
-  CardBody,
-  CardFooter,
-  CardHeader,
+  CardBody, CardHeader,
   Flex,
   Heading,
   Image,
-  SimpleGrid,
-  Spacer,
-  Text,
+  SimpleGrid, Text
 } from '@chakra-ui/react';
+import { Feature } from '../../../shared/models';
 
 type Props = {
-  features: [
-    {
-      heading: string;
-      body: string;
-      reversed?: boolean;
-      image?: string;
-    }
-  ];
+  features: Feature[];
 };
 
 const Features = ({ features }: Props) => {
@@ -29,7 +18,7 @@ const Features = ({ features }: Props) => {
       spacing={5}
       templateColumns="repeat(auto-fill, minmax(200px, 1fr))"
     >
-      {features.map((feature, i) => {
+      {features?.map((feature, i) => {
         return (
           <Flex
             key={i}
