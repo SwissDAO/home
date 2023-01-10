@@ -1,7 +1,7 @@
 import { Container, Grid, GridItem, Image } from '@chakra-ui/react';
 import { ethers } from 'ethers';
 import { useEffect, useState } from 'react';
-import { useAccount, useContractRead } from 'wagmi';
+import { useAccount, useContractRead, useContractWrite, usePrepareContractWrite, useWaitForTransaction } from 'wagmi';
 import MEMBERCARD_ABI from '../../../artifacts/Membercard.json';
 
 const Content = ({ account }: { account: boolean }) => {
@@ -9,10 +9,23 @@ const Content = ({ account }: { account: boolean }) => {
   const [balance, setBalance] = useState(0);
 
   const { data: balanceOf } = useContractRead({
-    address: '0x4772b8ce690cEC47c22f6B2FE1cFD6F3E6Db29ad',
+    address: '0xf2fa99322a359eF5De22944c7EdFe9BCb7769426',
     abi: MEMBERCARD_ABI,
     functionName: 'balanceOf',
     args: [address],
+  });
+
+  const { config } = usePrepareContractWrite({
+    address: '0xf2fa99322a359eF5De22944c7EdFe9BCb7769426',
+    abi: MEMBERCARD_ABI,
+    functionName: 'mint',
+    args: ["Nice"]
+  })
+
+  const { data, isLoading, isSuccess, writeAsync: write } = useContractWrite(config)
+
+  const { isSuccess: txSuccess, error: txError } = useWaitForTransaction({
+    hash: data?.hash,
   });
 
   useEffect(() => {
@@ -20,6 +33,15 @@ const Content = ({ account }: { account: boolean }) => {
       Number(ethers.utils.formatUnits(ethers.BigNumber.from(balanceOf || 0), 0))
     );
   }, [balanceOf]);
+
+  const mint = async () => {
+    try {
+      await write?.()
+      console.log(`Congrats, your NFT is here: https://etherscan.io/tx/${data?.hash}`)
+    } catch (error) {
+      console.log(error);
+    }
+  }
 
   return (
     <Container as="main" role="main" py="16">
@@ -33,7 +55,9 @@ const Content = ({ account }: { account: boolean }) => {
 
               <h3>Mint a Membership Card here:</h3>
 
-              <button>Mint</button>
+              <button onClick={mint}>
+                Mint
+              </button>
             </>
           )}
 
