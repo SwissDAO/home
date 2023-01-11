@@ -1,9 +1,19 @@
-import { Button, Card, CardBody, CardFooter, CardHeader, Flex, Heading, Image, Text } from "@chakra-ui/react";
-import { Feature as FeatureType } from "../../models";
+import {
+  Button,
+  Card,
+  CardBody,
+  CardFooter,
+  CardHeader,
+  Flex,
+  Heading,
+  Image,
+  Text,
+} from '@chakra-ui/react';
+import { Feature as FeatureType } from '../../models';
 
 type Props = {
   feature: FeatureType;
-}
+};
 
 export const Feature = ({ feature }: Props) => {
   return (
@@ -29,12 +39,10 @@ export const Feature = ({ feature }: Props) => {
         </CardBody>
         {feature.cta && (
           <CardFooter>
-            <Button onClick={feature.cta.onClick}>
-              {feature.cta.label}
-            </Button>
+            <Button onClick={feature.cta.onClick}>{feature.cta.label}</Button>
           </CardFooter>
         )}
       </Card>
     </Flex>
   );
-}
+};

@@ -1,7 +1,20 @@
-import { Button, Container, Grid, GridItem, Image, Input } from '@chakra-ui/react';
+import {
+  Button,
+  Container,
+  Grid,
+  GridItem,
+  Image,
+  Input,
+} from '@chakra-ui/react';
 import { ethers } from 'ethers';
 import { useEffect, useState } from 'react';
-import { useAccount, useContractRead, useContractWrite, usePrepareContractWrite, useWaitForTransaction } from 'wagmi';
+import {
+  useAccount,
+  useContractRead,
+  useContractWrite,
+  usePrepareContractWrite,
+  useWaitForTransaction,
+} from 'wagmi';
 import MEMBERCARD_ABI from '../../../artifacts/Membercard.json';
 import { Feature } from '../../../shared/components/Feature/Feature';
 import FeatureList from '../../../shared/components/FeatureList/FeatureList';
@@ -13,8 +26,8 @@ const features = [
     body: 'Earn a specific Badge!',
     cta: {
       label: 'Earn Badge',
-      onClick: () => console.log('lol')
-    }
+      onClick: () => console.log('lol'),
+    },
   },
   {
     heading: 'Earn Experience',
@@ -48,10 +61,15 @@ const Content = ({ account }: { account: boolean }) => {
     address: '0x6F650cB99aA260e74040f6BA8E0ebC8C7fb920F2',
     abi: MEMBERCARD_ABI,
     functionName: 'mint',
-    args: ["Nice"]
-  })
+    args: ['Nice'],
+  });
 
-  const { data, isLoading, isSuccess, writeAsync: write } = useContractWrite(config)
+  const {
+    data,
+    isLoading,
+    isSuccess,
+    writeAsync: write,
+  } = useContractWrite(config);
 
   const { isSuccess: txSuccess, error: txError } = useWaitForTransaction({
     hash: data?.hash,
@@ -65,12 +83,14 @@ const Content = ({ account }: { account: boolean }) => {
 
   const mint = async () => {
     try {
-      await write?.()
-      console.log(`Congrats, your NFT is here: https://etherscan.io/tx/${data?.hash}`)
+      await write?.();
+      console.log(
+        `Congrats, your NFT is here: https://etherscan.io/tx/${data?.hash}`
+      );
     } catch (error) {
       console.log(error);
     }
-  }
+  };
 
   return (
     <Container as="main" role="main" py="16">
@@ -82,9 +102,7 @@ const Content = ({ account }: { account: boolean }) => {
 
               <h3>Mint a Membership Card here:</h3>
 
-              <Button onClick={mint}>
-                Mint
-              </Button>
+              <Button onClick={mint}>Mint</Button>
             </>
           )}
 
@@ -98,10 +116,7 @@ const Content = ({ account }: { account: boolean }) => {
                 <li>DAO: 50</li>
               </ul>
 
-              <Input
-                value={(attributes as any)?.name}
-                size='sm'
-              />
+              <Input value={(attributes as any)?.name} size="sm" />
 
               <FeatureList>
                 <Feature feature={features[0]} />

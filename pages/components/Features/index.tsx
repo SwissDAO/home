@@ -1,10 +1,12 @@
 import {
   Card,
-  CardBody, CardHeader,
+  CardBody,
+  CardHeader,
   Flex,
   Heading,
   Image,
-  SimpleGrid, Text
+  SimpleGrid,
+  Text,
 } from '@chakra-ui/react';
 import { Feature } from '../../../shared/models';
 

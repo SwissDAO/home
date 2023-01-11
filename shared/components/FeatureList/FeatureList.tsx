@@ -1,6 +1,6 @@
 import { SimpleGrid } from '@chakra-ui/react';
 
-type Props = {}
+type Props = {};
 
 const FeatureList = ({ children }: { children: React.ReactNode }) => {
   return (
@@ -10,7 +10,7 @@ const FeatureList = ({ children }: { children: React.ReactNode }) => {
     >
       {children}
     </SimpleGrid>
-  )
-}
+  );
+};
 
-export default FeatureList
+export default FeatureList;

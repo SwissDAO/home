@@ -6,5 +6,5 @@ export type Feature = {
   cta?: {
     label: string;
     onClick: () => void;
-  }
+  };
 };
