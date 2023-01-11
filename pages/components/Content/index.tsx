@@ -1,22 +1,51 @@
-import { Container, Grid, GridItem, Image } from '@chakra-ui/react';
+import { Button, Container, Grid, GridItem, Image, Input } from '@chakra-ui/react';
 import { ethers } from 'ethers';
 import { useEffect, useState } from 'react';
 import { useAccount, useContractRead, useContractWrite, usePrepareContractWrite, useWaitForTransaction } from 'wagmi';
 import MEMBERCARD_ABI from '../../../artifacts/Membercard.json';
+import { Feature } from '../../../shared/components/Feature/Feature';
+import FeatureList from '../../../shared/components/FeatureList/FeatureList';
+import Features from '../Features';
+
+const features = [
+  {
+    heading: 'Earn Badges',
+    body: 'Earn a specific Badge!',
+    cta: {
+      label: 'Earn Badge',
+      onClick: () => console.log('lol')
+    }
+  },
+  {
+    heading: 'Earn Experience',
+    body: 'Get your experience verified!',
+  },
+  {
+    heading: 'Different card levels',
+    body: 'Level-up your card to silver, gold or even platinum!',
+  },
+];
 
 const Content = ({ account }: { account: boolean }) => {
   const { address } = useAccount();
   const [balance, setBalance] = useState(0);
 
   const { data: balanceOf } = useContractRead({
-    address: '0xf2fa99322a359eF5De22944c7EdFe9BCb7769426',
+    address: '0x6F650cB99aA260e74040f6BA8E0ebC8C7fb920F2',
     abi: MEMBERCARD_ABI,
     functionName: 'balanceOf',
     args: [address],
   });
 
+  const { data: attributes } = useContractRead({
+    address: '0x6F650cB99aA260e74040f6BA8E0ebC8C7fb920F2',
+    abi: MEMBERCARD_ABI,
+    functionName: 'holdersAttributes',
+    args: [address],
+  });
+
   const { config } = usePrepareContractWrite({
-    address: '0xf2fa99322a359eF5De22944c7EdFe9BCb7769426',
+    address: '0x6F650cB99aA260e74040f6BA8E0ebC8C7fb920F2',
     abi: MEMBERCARD_ABI,
     functionName: 'mint',
     args: ["Nice"]
@@ -47,17 +76,15 @@ const Content = ({ account }: { account: boolean }) => {
     <Container as="main" role="main" py="16">
       <Grid>
         <GridItem>
-          {!account && <h2>Your Keys to the Ecosystem!</h2>}
-
           {account && balance <= 0 && (
             <>
               <h2>No Membership Card found!</h2>
 
               <h3>Mint a Membership Card here:</h3>
 
-              <button onClick={mint}>
+              <Button onClick={mint}>
                 Mint
-              </button>
+              </Button>
             </>
           )}
 
@@ -70,6 +97,17 @@ const Content = ({ account }: { account: boolean }) => {
                 <li>Solidity: 100</li>
                 <li>DAO: 50</li>
               </ul>
+
+              <Input
+                value={(attributes as any)?.name}
+                size='sm'
+              />
+
+              <FeatureList>
+                <Feature feature={features[0]} />
+                <Feature feature={features[1]} />
+                <Feature feature={features[2]} />
+              </FeatureList>
             </>
           )}
         </GridItem>
@@ -77,7 +115,7 @@ const Content = ({ account }: { account: boolean }) => {
           <Image
             height={400}
             width={400}
-            src="/videos/SwissDAO_Sneakpeak.gif"
+            src="/images/membershipcard.svg"
             alt=""
           />
         </GridItem>

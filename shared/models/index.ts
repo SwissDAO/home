@@ -3,4 +3,8 @@ export type Feature = {
   body: string;
   reversed?: boolean;
   image?: string;
+  cta?: {
+    label: string;
+    onClick: () => void;
+  }
 };

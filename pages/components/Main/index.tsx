@@ -1,5 +1,6 @@
 import { Container, FlexProps, Text } from '@chakra-ui/react';
-import Features from '../Features';
+import { Feature } from '../../../shared/components/Feature/Feature';
+import FeatureList from '../../../shared/components/FeatureList/FeatureList';
 
 const features = [
   {
@@ -20,11 +21,13 @@ const features = [
 const Main = (props: FlexProps) => {
   return (
     <Container as="main" role="main" direction="row" py="16" {...props}>
-      {/* <Container flex="1">
-        Main
-      </Container> */}
       <Text fontSize="3xl">Features</Text>
-      <Features features={features} />
+
+      <FeatureList>
+        <Feature feature={features[0]} />
+        <Feature feature={features[1]} />
+        <Feature feature={features[2]} />
+      </FeatureList>
     </Container>
   );
 };
