@@ -44,7 +44,6 @@ const appInfo = {
 // ]);
 
 const wagmiClient = createClient({
-  autoConnect: true,
   connectors,
   provider,
   webSocketProvider,
