@@ -12,7 +12,7 @@ import {
   trustWallet
 } from '@rainbow-me/rainbowkit/wallets';
 import { goerli } from '@wagmi/core/chains';
-import merge from 'lodash.merge';
+import merge from 'lodash/merge';
 import type { AppProps } from 'next/app';
 import { configureChains, createClient, WagmiConfig } from 'wagmi';
 import { infuraProvider } from 'wagmi/providers/infura';
