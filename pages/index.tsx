@@ -7,20 +7,20 @@ import Main from './components/Main';
 import Navbar from './components/Navbar';
 
 export default function Home() {
-  const { isConnected } = useAccount();
+  const { address, isConnected } = useAccount();
   const [account, setAccount] = useState(false);
 
   // https://github.com/vercel/next.js/discussions/35773 -> 🙂 smh
-  useEffect(
-    () => setAccount(isConnected),
+  // useEffect(
+  //   () => setAccount(isConnected),
 
-    [isConnected]
-  );
+  //   [isConnected]
+  // );
 
   return (
     <Flex direction="column" flex="1">
       <Navbar />
-      {account ? <Content /> : <Main />}
+      {isConnected ? <Content /> : <Main />}
       <Footer />
     </Flex>
   );

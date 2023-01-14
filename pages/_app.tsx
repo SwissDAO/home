@@ -17,12 +17,12 @@ import { infuraProvider } from 'wagmi/providers/infura';
 import { publicProvider } from 'wagmi/providers/public';
 import '../styles/globals.scss';
 
-const { chains, provider } = configureChains(
+const { chains, provider, webSocketProvider } = configureChains(
   [goerli],
   [infuraProvider({ apiKey: process.env.INFURA_KEY! }), publicProvider()]
 );
 
-const { wallets } = getDefaultWallets({
+const { connectors } = getDefaultWallets({
   appName: 'swissDAO Membership Card',
   chains,
 });
@@ -31,22 +31,23 @@ const appInfo = {
   appName: 'swissDAO Membership Card',
 };
 
-const connectors = connectorsForWallets([
-  ...wallets,
-  {
-    groupName: 'Apps',
-    wallets: [
-      argentWallet({ chains }),
-      trustWallet({ chains }),
-      ledgerWallet({ chains }),
-    ],
-  },
-]);
+// const connectors = connectorsForWallets([
+//   ...wallets,
+//   {
+//     groupName: 'Apps',
+//     wallets: [
+//       argentWallet({ chains }),
+//       trustWallet({ chains }),
+//       ledgerWallet({ chains }),
+//     ],
+//   },
+// ]);
 
 const wagmiClient = createClient({
   autoConnect: true,
   connectors,
   provider,
+  webSocketProvider,
 });
 
 export default function App({ Component, pageProps }: AppProps) {

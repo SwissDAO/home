@@ -41,7 +41,7 @@ const features = [
 ];
 
 const Content = () => {
-  const { address } = useAccount();
+  const { address, isConnected } = useAccount();
   const [balance, setBalance] = useState(0);
 
   const { data: balanceOf } = useContractRead({
@@ -67,7 +67,9 @@ const Content = () => {
   console.log(balance);
 
   return (
-    <Container as="main" role="main" py="16">
+    <>
+      {isConnected && 
+      <Container as="main" role="main" py="16">
       <Grid>
         <GridItem>
           {balance == 0 && (
@@ -147,6 +149,9 @@ const Content = () => {
         </GridItem>
       </Grid>
     </Container>
+    }
+    </>
+    
   );
 };
 
