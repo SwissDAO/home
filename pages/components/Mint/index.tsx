@@ -13,7 +13,7 @@ import {
   usePrepareContractWrite,
   useWaitForTransaction,
 } from 'wagmi';
-import { CONFIG } from '../../shared/const';
+import { CONFIG } from '../../../shared/const';
 
 const Mint = () => {
   const [name, setName] = useState('');
@@ -46,7 +46,7 @@ const Mint = () => {
       {props => (
         <Form>
           <Field name="name">
-            {({ field, form }) => (
+            {({ field, form }: { field: any, form: any }) => (
               <FormControl
                 isRequired
                 isInvalid={form.errors.name && form.touched.name}

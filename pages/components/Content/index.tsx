@@ -15,7 +15,7 @@ import { useEffect, useState } from 'react';
 import { useAccount, useContractRead } from 'wagmi';
 import { Feature } from '../../../shared/components/Feature/Feature';
 import FeatureList from '../../../shared/components/FeatureList/FeatureList';
-import { CONFIG } from '../../shared/const';
+import { CONFIG } from '../../../shared/const';
 import Mint from '../Mint';
 
 const features = [
@@ -106,7 +106,7 @@ const Content = () => {
                 {props => (
                   <Form>
                     <Field name="name">
-                      {({ field, form }) => (
+                      {({ field, form }: { field: any, form: any }) => (
                         <FormControl
                           isInvalid={form.errors.name && form.touched.name}
                         >
