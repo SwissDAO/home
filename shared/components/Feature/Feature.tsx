@@ -24,10 +24,9 @@ export const Feature = ({ feature }: Props) => {
       <Card height="500px">
         <Image
           src={feature.image || 'https://bit.ly/dan-abramov'}
-          alt="Dan Abramov"
-          borderRadius="lg"
+          alt={''}
           boxSize="100%"
-          objectFit="cover"
+          objectFit="fill"
         />
       </Card>
       <Card height="200px">
