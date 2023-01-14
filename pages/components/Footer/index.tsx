@@ -6,7 +6,7 @@ import {
   Stack,
   Text,
 } from '@chakra-ui/react';
-import { FaGithub, FaLinkedin, FaTwitter } from 'react-icons/fa';
+import { FaDiscord, FaGithub, FaLinkedin, FaTwitter } from 'react-icons/fa';
 
 const Footer = () => (
   <Box p={10} as="footer" role="contentinfo">
@@ -87,6 +87,12 @@ const Footer = () => (
           href="https://twitter.com/swissDAOspace"
           aria-label="Twitter"
           icon={<FaTwitter fontSize="1.25rem" />}
+        />
+        <IconButton
+          as="a"
+          href="https://discord.com/invite/5kvQ3Q6G4x"
+          aria-label="Discord"
+          icon={<FaDiscord fontSize="1.25rem" />}
         />
       </ButtonGroup>
     </Stack>
