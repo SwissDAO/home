@@ -2,15 +2,17 @@ import { ChakraProvider } from '@chakra-ui/react';
 import {
   connectorsForWallets,
   getDefaultWallets,
-  RainbowKitProvider,
+  lightTheme,
+  RainbowKitProvider
 } from '@rainbow-me/rainbowkit';
 import '@rainbow-me/rainbowkit/styles.css';
 import {
   argentWallet,
   ledgerWallet,
-  trustWallet,
+  trustWallet
 } from '@rainbow-me/rainbowkit/wallets';
 import { goerli } from '@wagmi/core/chains';
+import merge from 'lodash.merge';
 import type { AppProps } from 'next/app';
 import { configureChains, createClient, WagmiConfig } from 'wagmi';
 import { infuraProvider } from 'wagmi/providers/infura';
@@ -22,7 +24,7 @@ const { chains, provider, webSocketProvider } = configureChains(
   [infuraProvider({ apiKey: process.env.INFURA_KEY! }), publicProvider()]
 );
 
-const { connectors } = getDefaultWallets({
+const { wallets } = getDefaultWallets({
   appName: 'swissDAO Membership Card',
   chains,
 });
@@ -31,17 +33,48 @@ const appInfo = {
   appName: 'swissDAO Membership Card',
 };
 
-// const connectors = connectorsForWallets([
-//   ...wallets,
-//   {
-//     groupName: 'Apps',
-//     wallets: [
-//       argentWallet({ chains }),
-//       trustWallet({ chains }),
-//       ledgerWallet({ chains }),
-//     ],
-//   },
-// ]);
+const connectors = connectorsForWallets([
+  ...wallets,
+  {
+    groupName: 'Apps',
+    wallets: [
+      argentWallet({ chains }),
+      trustWallet({ chains }),
+      ledgerWallet({ chains }),
+    ],
+  },
+]);
+
+const customTheme = merge(
+  lightTheme({
+    accentColor: 'black',
+    accentColorForeground: 'white',
+    borderRadius: 'large',
+    overlayBlur: 'small',
+  }),
+  {
+    colors: {
+      modalTextSecondary: 'black',
+      menuItemBackground: '#f2f2f2',
+      closeButtonBackground: 'white',
+      closeButton: 'black',
+      generalBorder: 'black',
+      profileForeground: 'white',
+      profileAction: '#f2f2f2',
+      profileActionHover: '#f2f2f2',
+    },
+  },
+  {
+    shadows: {
+      profileDetailsAction: 'none',
+    },
+  },
+  {
+    fonts: {
+      body: 'inherit',
+    },
+  }
+);
 
 const wagmiClient = createClient({
   connectors,
@@ -57,6 +90,7 @@ export default function App({ Component, pageProps }: AppProps) {
           appInfo={appInfo}
           chains={chains}
           modalSize={'compact'}
+          theme={customTheme}
         >
           <Component {...pageProps} />
         </RainbowKitProvider>
