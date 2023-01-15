@@ -1,33 +1,7 @@
 import {
-  Box,
-  Heading,
-  Container,
-  FlexProps,
-  Link,
-  Text,
-  Button,
-  Stack,
+  Box, Container,
+  FlexProps, Heading, Stack, Text
 } from '@chakra-ui/react';
-import { Feature } from '../../../shared/components/Feature/Feature';
-import FeatureList from '../../../shared/components/FeatureList/FeatureList';
-import NextLink from "next/link";
-import { SiDiscord } from "react-icons/si";
-
-const features = [
-  {
-    heading: 'Access Control',
-    body: 'Get access to community',
-  },
-  {
-    heading: 'Access Control',
-    body: 'Get access to community',
-    reversed: true,
-  },
-  {
-    heading: 'Access Control',
-    body: 'Get access to community',
-  },
-];
 
 const Main = (props: FlexProps) => {
   return (

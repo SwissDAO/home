@@ -7,23 +7,23 @@ import {
   Flex,
   Heading,
   Image,
-  Text,
+  Text
 } from '@chakra-ui/react';
-import { Feature as FeatureType } from '../../models';
+import { Feature as FeatureType } from '../../../shared/models';
 
 type Props = {
   feature: FeatureType;
 };
 
-export const Feature = ({ feature }: Props) => {
+const Feature = ({ feature }: Props) => {
   return (
     <Flex
-      flexDirection={feature.reversed ? 'column-reverse' : 'column'}
+      flexDirection={feature?.reversed ? 'column-reverse' : 'column'}
       gap="1em"
     >
       <Card height="500px">
         <Image
-          src={feature.image || 'https://bit.ly/dan-abramov'}
+          src={feature?.image || 'https://bit.ly/dan-abramov'}
           alt={''}
           boxSize="100%"
           objectFit="fill"
@@ -31,17 +31,19 @@ export const Feature = ({ feature }: Props) => {
       </Card>
       <Card height="200px">
         <CardHeader>
-          <Heading size="md">{feature.heading}</Heading>
+          <Heading size="md">{feature?.heading}</Heading>
         </CardHeader>
         <CardBody>
-          <Text>{feature.body}</Text>
+          <Text>{feature?.body}</Text>
         </CardBody>
-        {feature.cta && (
+        {feature?.cta && (
           <CardFooter>
-            <Button onClick={feature.cta.onClick}>{feature.cta.label}</Button>
+            <Button onClick={feature?.cta?.onClick}>{feature?.cta?.label}</Button>
           </CardFooter>
         )}
       </Card>
     </Flex>
   );
 };
+
+export default Feature;

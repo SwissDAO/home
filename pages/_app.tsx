@@ -18,6 +18,7 @@ import { configureChains, createClient, WagmiConfig } from 'wagmi';
 import { infuraProvider } from 'wagmi/providers/infura';
 import { publicProvider } from 'wagmi/providers/public';
 import '../styles/globals.scss';
+import Layout from './layouts/layout';
 
 const { chains, provider, webSocketProvider } = configureChains(
   [goerli],
@@ -92,7 +93,9 @@ export default function App({ Component, pageProps }: AppProps) {
           modalSize={'compact'}
           theme={customTheme}
         >
-          <Component {...pageProps} />
+          <Layout>
+            <Component {...pageProps} />
+          </Layout>
         </RainbowKitProvider>
       </WagmiConfig>
     </ChakraProvider>

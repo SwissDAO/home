@@ -9,7 +9,7 @@ import {
 import { FaDiscord, FaGithub, FaLinkedin, FaTwitter } from 'react-icons/fa';
 
 const Footer = () => (
-  <Box p={10} as="footer" role="contentinfo">
+  <Box as="footer" role="contentinfo">
     {/* <Stack
       spacing="8"
       direction={{ base: 'column', md: 'row' }}
@@ -60,8 +60,7 @@ const Footer = () => (
     </Stack> */}
     <Divider />
     <Stack
-      pt="8"
-      pb="12"
+      p="10"
       justify="space-between"
       direction={{ base: 'column-reverse', md: 'row' }}
       align="center"
