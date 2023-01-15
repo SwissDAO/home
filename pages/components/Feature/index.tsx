@@ -7,7 +7,7 @@ import {
   Flex,
   Heading,
   Image,
-  Text
+  Text,
 } from '@chakra-ui/react';
 import { Feature as FeatureType } from '../../../shared/models';
 
@@ -29,7 +29,7 @@ const Feature = ({ feature }: Props) => {
           objectFit="fill"
         />
       </Card>
-      <Card height="200px">
+      <Card height="max-content">
         <CardHeader>
           <Heading size="md">{feature?.heading}</Heading>
         </CardHeader>
@@ -38,7 +38,9 @@ const Feature = ({ feature }: Props) => {
         </CardBody>
         {feature?.cta && (
           <CardFooter>
-            <Button onClick={feature?.cta?.onClick}>{feature?.cta?.label}</Button>
+            <Button onClick={feature?.cta?.onClick}>
+              {feature?.cta?.label}
+            </Button>
           </CardFooter>
         )}
       </Card>

@@ -36,54 +36,55 @@ const Mint = () => {
     hash: data?.hash,
   });
 
-  const handleInputChange = (e: any) => setName(e.target.value);
-
   return (
     <>
-      {isConnected && 
+      {isConnected && (
         <Formik
-        initialValues={{ name: '' }}
-        onSubmit={(values, actions) => {
-          write?.();
-        }}
-      >
-        {props => (
-          <Form>
-            <Field name="name">
-              {({ field, form }: { field: any, form: any }) => (
-                <FormControl
-                  isRequired
-                  isInvalid={form.errors.name && form.touched.name}
-                >
-                  <FormLabel>Put your name here:</FormLabel>
-                  <Input value={name} onChange={handleInputChange} />
-                  <FormErrorMessage>{form.errors.name}</FormErrorMessage>
-                </FormControl>
-              )}
-            </Field>
-  
-            <div>
-              <Button disabled={!write || isLoading} type="submit">
-                {isLoading ? 'Minting...' : 'Mint'}
-              </Button>
-              {isSuccess && (
-                <div>
-                  Successfully minted your NFT!
+          initialValues={{ name: '' }}
+          onSubmit={(values, actions) => {
+            write?.();
+          }}
+        >
+          {props => (
+            <Form>
+              <Field name="name">
+                {({ field, form }: { field: any; form: any }) => (
+                  <FormControl
+                    isRequired
+                    isInvalid={form.errors.name && form.touched.name}
+                  >
+                    <FormLabel>Put your name here:</FormLabel>
+                    <Input
+                      value={name}
+                      onChange={e => setName(e.target.value)}
+                    />
+                    <FormErrorMessage>{form.errors.name}</FormErrorMessage>
+                  </FormControl>
+                )}
+              </Field>
+
+              <div>
+                <Button disabled={!write || isLoading} type="submit">
+                  {isLoading ? 'Minting...' : 'Mint'}
+                </Button>
+                {isSuccess && (
                   <div>
-                    <Link href={`https://etherscan.io/tx/${data?.hash}`}>
-                      Etherscan
-                    </Link>
+                    Successfully minted your NFT!
+                    <div>
+                      <Link href={`https://etherscan.io/tx/${data?.hash}`}>
+                        Etherscan
+                      </Link>
+                    </div>
                   </div>
-                </div>
-              )}
-              {(isPrepareError || isError) && (
-                <div>Error: {(prepareError || error)?.message}</div>
-              )}
-            </div>
-          </Form>
-        )}
-      </Formik>
-      }
+                )}
+                {(isPrepareError || isError) && (
+                  <div>Error: {(prepareError || error)?.message}</div>
+                )}
+              </div>
+            </Form>
+          )}
+        </Formik>
+      )}
     </>
   );
 };

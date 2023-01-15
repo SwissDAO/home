@@ -5,5 +5,5 @@ import Main from './components/Main';
 export default function Home() {
   const { isConnected } = useAccount();
 
-  return (isConnected ? <Content /> : <Main />)
+  return isConnected ? <Content /> : <Main />;
 }

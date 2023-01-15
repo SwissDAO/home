@@ -1,6 +1,10 @@
 import {
-  Box, Container,
-  FlexProps, Heading, Stack, Text
+  Box,
+  Container,
+  FlexProps,
+  Heading,
+  Stack,
+  Text,
 } from '@chakra-ui/react';
 
 const Main = (props: FlexProps) => {
@@ -11,16 +15,16 @@ const Main = (props: FlexProps) => {
           as={Box}
           textAlign={'center'}
           spacing={{ base: 8, md: 14 }}
-          py={{ base: 20, md: 36 }}>
+          py={{ base: 20, md: 36 }}
+        >
           <Heading
             fontWeight={600}
             fontSize={{ base: '2xl', sm: '4xl', md: '6xl' }}
-            lineHeight={'110%'}>
-            The First DAO <br />for  {" "}
-            <Text
-              bgGradient='linear(to-r, #E31D1C, #FF0080)'
-              bgClip='text'
-            >
+            lineHeight={'110%'}
+          >
+            The First DAO <br />
+            for{' '}
+            <Text bgGradient="linear(to-r, #E31D1C, #FF0080)" bgClip="text">
               Switzerland.³
             </Text>
           </Heading>
@@ -31,12 +35,18 @@ const Main = (props: FlexProps) => {
             <Text fontSize="2xl">
               ³ Community spirit: Connect, Learn and Build
             </Text>
-            <Text fontSize="2xl">
-              ³ Just do Web3: Take Ownership. LFG 🚀
-            </Text>
+            <Text fontSize="2xl">³ Just do Web3: Take Ownership. LFG 🚀</Text>
           </Stack>
           <Text fontSize="2xl">
-            Grab a ☕️ and read our <a target='_blank' rel='noreferrer' href='https://docs.google.com/document/d/100hBiuGn7VzweSgTpl_SsJA6UjHcsh81tqXx0b2DyBk/edit#heading=h.aasa0wyt1wn'>📖</a>.
+            Grab a ☕️ and read our{' '}
+            <a
+              target="_blank"
+              rel="noreferrer"
+              href="https://docs.google.com/document/d/100hBiuGn7VzweSgTpl_SsJA6UjHcsh81tqXx0b2DyBk/edit#heading=h.aasa0wyt1wn"
+            >
+              📖
+            </a>
+            .
           </Text>
 
           {/* <Stack
