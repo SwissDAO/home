@@ -1,7 +1,5 @@
 const Blog = () => {
-  return (
-    <p>Blog</p>
-  )
-}
+  return <p>Blog</p>;
+};
 
 export default Blog;

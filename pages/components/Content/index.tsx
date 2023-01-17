@@ -1,18 +1,25 @@
 import {
+  Box,
   Button,
   Container,
+  Flex,
   FormControl,
   FormErrorMessage,
   FormLabel,
   Grid,
   GridItem,
   Image,
-  Input
+  Input,
 } from '@chakra-ui/react';
 import { ethers } from 'ethers';
 import { Field, Form, Formik } from 'formik';
 import { useEffect, useState } from 'react';
-import { useAccount, useContractRead } from 'wagmi';
+import {
+  useAccount,
+  useContractRead,
+  useContractWrite,
+  usePrepareContractWrite,
+} from 'wagmi';
 import { CONFIG } from '../../../shared/const';
 import Feature from '../Feature';
 import FeatureList from '../FeatureList';
@@ -31,11 +38,19 @@ const features = [
   {
     heading: 'Earn Experience',
     body: 'Get your experience verified!',
+    cta: {
+      label: 'Earn Experience',
+      onClick: () => console.log('lol'),
+    },
     image: '/images/membershipcard3.svg',
   },
   {
     heading: 'Different card levels',
     body: 'Level-up your card to silver, gold or even platinum!',
+    cta: {
+      label: 'Level-Up',
+      onClick: () => console.log('lol'),
+    },
     image: '/images/membershipcard4.svg',
   },
 ];
@@ -43,6 +58,7 @@ const features = [
 const Content = () => {
   const { address, isConnected } = useAccount();
   const [balance, setBalance] = useState(0);
+  const [name, setName] = useState('');
 
   const { data: balanceOf } = useContractRead({
     ...CONFIG,
@@ -56,20 +72,32 @@ const Content = () => {
     args: [address],
   });
 
+  const {
+    config,
+    error: prepareError,
+    isError: isPrepareError,
+  } = usePrepareContractWrite({
+    ...CONFIG,
+    functionName: 'updateMembercardAttributes',
+    args: [name],
+  });
+
+  const { write } = useContractWrite(config);
+
   useEffect(() => {
     setBalance(
       Number(ethers.utils.formatUnits(ethers.BigNumber.from(balanceOf || 0), 0))
     );
-  }, [balanceOf]);
+
+    setName((attributes as any).name);
+  }, [attributes, balanceOf]);
 
   const membershipDetails = attributes as any;
 
-  console.log(balance);
-
   return (
     <>
-      {isConnected &&
-        <Container as="main" role="main" py="16">
+      {isConnected && (
+        <Container py="16">
           <Grid>
             <GridItem>
               {balance == 0 && (
@@ -95,22 +123,23 @@ const Content = () => {
 
                   <Formik
                     initialValues={{ name: membershipDetails.name }}
-                    onSubmit={(values, actions) => {
-                      setTimeout(() => {
-                        alert(JSON.stringify(values, null, 2));
-                        actions.setSubmitting(false);
-                      }, 1000);
+                    onSubmit={values => {
+                      setName(values.name);
+                      setTimeout(() => write?.(), 1000);
                     }}
                   >
                     {props => (
                       <Form>
                         <Field name="name">
-                          {({ field, form }: { field: any, form: any }) => (
+                          {({ field, form }: { field: any; form: any }) => (
                             <FormControl
                               isInvalid={form.errors.name && form.touched.name}
                             >
                               <FormLabel>Cardholder name</FormLabel>
-                              <Input {...field} placeholder="name" />
+                              <Input
+                                value={name}
+                                onChange={e => setName(e.target.value)}
+                              />
                               <FormErrorMessage>
                                 {form.errors.name}
                               </FormErrorMessage>
@@ -146,9 +175,8 @@ const Content = () => {
             </GridItem>
           </Grid>
         </Container>
-      }
+      )}
     </>
-
   );
 };
 

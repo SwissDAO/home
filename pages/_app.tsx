@@ -3,13 +3,13 @@ import {
   connectorsForWallets,
   getDefaultWallets,
   lightTheme,
-  RainbowKitProvider
+  RainbowKitProvider,
 } from '@rainbow-me/rainbowkit';
 import '@rainbow-me/rainbowkit/styles.css';
 import {
   argentWallet,
   ledgerWallet,
-  trustWallet
+  trustWallet,
 } from '@rainbow-me/rainbowkit/wallets';
 import { goerli } from '@wagmi/core/chains';
 import merge from 'lodash/merge';

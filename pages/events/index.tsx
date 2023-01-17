@@ -1,7 +1,5 @@
 const Events = () => {
-  return (
-    <p>Events</p>
-  )
-}
+  return <p>Events</p>;
+};
 
 export default Events;

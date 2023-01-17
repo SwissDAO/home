@@ -11,7 +11,7 @@ const Navbar = () => {
           <Logo width={32} height={32} />
         </Link>
         <Flex justify="end">
-          <Grid templateColumns='repeat(5, 1fr)' alignItems="center">
+          <Grid templateColumns="repeat(5, 1fr)" alignItems="center">
             <Link href="/about">About</Link>
             <Link href="/blog">Blog</Link>
             <Link href="/events">Events</Link>
