@@ -1,26 +1,70 @@
-import { Box, Flex, Grid, HStack, useColorModeValue } from '@chakra-ui/react';
-import { ConnectButton } from '@rainbow-me/rainbowkit';
+import { Navbar as NextUiNavbar } from "@nextui-org/react";
+import { ConnectButton } from "@rainbow-me/rainbowkit";
 import Link from 'next/link';
-import Logo from '../Logo';
+import { useAccount } from 'wagmi';
+import Logo from "../Logo";
 
 const Navbar = () => {
+  const { isConnected } = useAccount();
+
+  const navItems = [
+    {
+      label: 'About',
+      link: '/about'
+    },
+    {
+      label: 'Blog',
+      link: '/blog'
+    },
+    {
+      label: 'Events',
+      link: '/events'
+    },
+    {
+      label: isConnected ? 'Your Membership' : 'Membership',
+      link: '/membership'
+    },
+  ];
+
+  const renderNavItem = (item: { label: string, link: string }, i: number) => (
+    <Link key={i} href={item.link}>{item.label}</Link>
+  )
+
   return (
-    <Box as="nav" p={5} boxShadow={useColorModeValue('sm', 'sm-dark')}>
-      <HStack justify="space-between">
+    <NextUiNavbar isBordered variant={'static'}>
+      <NextUiNavbar.Brand
+        css={{
+          "@xs": {
+            w: "12%",
+          },
+        }}
+      >
         <Link href="/">
-          <Logo width={32} height={32} />
+          <Logo width={128} height={128} />
         </Link>
-        <Flex justify="end">
-          <Grid templateColumns="repeat(5, 1fr)" alignItems="center">
-            <Link href="/about">About</Link>
-            <Link href="/blog">Blog</Link>
-            <Link href="/events">Events</Link>
-            <Link href="/membership">Membership</Link>
-          </Grid>
+      </NextUiNavbar.Brand>
+      <NextUiNavbar.Content hideIn="xs">
+        {navItems.map((item, i) => (
+          renderNavItem(item, i)
+        ))}
+
+        <NextUiNavbar.Item>
           <ConnectButton />
-        </Flex>
-      </HStack>
-    </Box>
+        </NextUiNavbar.Item>
+      </NextUiNavbar.Content>
+      <NextUiNavbar.Toggle aria-label="toggle navigation" showIn="xs" />
+      <NextUiNavbar.Collapse>
+        {navItems.map((item, i) => (
+          <NextUiNavbar.CollapseItem key={i}>
+            {renderNavItem(item, i)}
+          </NextUiNavbar.CollapseItem>
+        ))}
+
+        <NextUiNavbar.CollapseItem>
+          <ConnectButton />
+        </NextUiNavbar.CollapseItem>
+      </NextUiNavbar.Collapse>
+    </NextUiNavbar>
   );
 };
 

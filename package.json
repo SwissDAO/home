@@ -12,6 +12,7 @@
     "@chakra-ui/react": "^2.4.6",
     "@emotion/react": "^11.10.5",
     "@emotion/styled": "^11.10.5",
+    "@nextui-org/react": "^1.0.0-beta.12",
     "@rainbow-me/rainbowkit": "^0.8.1",
     "eslint": "8.31.0",
     "eslint-config-next": "13.1.1",

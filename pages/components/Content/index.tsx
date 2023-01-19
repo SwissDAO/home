@@ -1,24 +1,12 @@
-import {
-  Box,
-  Button,
-  Container,
-  Flex,
-  FormControl,
-  FormErrorMessage,
-  FormLabel,
-  Grid,
-  GridItem,
-  Image,
-  Input,
-} from '@chakra-ui/react';
+import { Container, Grid, Image } from '@nextui-org/react';
 import { ethers } from 'ethers';
-import { Field, Form, Formik } from 'formik';
+import { Formik } from 'formik';
 import { useEffect, useState } from 'react';
 import {
   useAccount,
   useContractRead,
   useContractWrite,
-  usePrepareContractWrite,
+  usePrepareContractWrite
 } from 'wagmi';
 import { CONFIG } from '../../../shared/const';
 import Feature from '../Feature';
@@ -97,9 +85,9 @@ const Content = () => {
   return (
     <>
       {isConnected && (
-        <Container py="16">
-          <Grid>
-            <GridItem>
+        <Container>
+          <Grid.Container>
+            <Grid>
               {balance == 0 && (
                 <>
                   <h2>No Membership Card found!</h2>
@@ -128,7 +116,7 @@ const Content = () => {
                       setTimeout(() => write?.(), 1000);
                     }}
                   >
-                    {props => (
+                    {/* {props => (
                       <Form>
                         <Field name="name">
                           {({ field, form }: { field: any; form: any }) => (
@@ -156,7 +144,7 @@ const Content = () => {
                           Update Membercard
                         </Button>
                       </Form>
-                    )}
+                    )} */}
                   </Formik>
 
                   <h3>Skills</h3>
@@ -172,8 +160,8 @@ const Content = () => {
                   </FeatureList>
                 </>
               )}
-            </GridItem>
-          </Grid>
+            </Grid>
+          </Grid.Container>
         </Container>
       )}
     </>

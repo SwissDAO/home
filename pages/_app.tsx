@@ -1,15 +1,15 @@
-import { ChakraProvider } from '@chakra-ui/react';
+import { createTheme, NextUIProvider } from '@nextui-org/react';
 import {
   connectorsForWallets,
   getDefaultWallets,
   lightTheme,
-  RainbowKitProvider,
+  RainbowKitProvider
 } from '@rainbow-me/rainbowkit';
 import '@rainbow-me/rainbowkit/styles.css';
 import {
   argentWallet,
   ledgerWallet,
-  trustWallet,
+  trustWallet
 } from '@rainbow-me/rainbowkit/wallets';
 import { goerli } from '@wagmi/core/chains';
 import merge from 'lodash/merge';
@@ -55,8 +55,10 @@ const customTheme = merge(
   }),
   {
     colors: {
+      connectButtonBackground: 'blue',
       modalTextSecondary: 'black',
       menuItemBackground: '#f2f2f2',
+      actionButtonBorder: 'yellow',
       closeButtonBackground: 'white',
       closeButton: 'black',
       generalBorder: 'black',
@@ -85,7 +87,10 @@ const wagmiClient = createClient({
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
-    <ChakraProvider>
+    // <ChakraProvider>
+    <NextUIProvider theme={createTheme({
+      type: 'dark',
+    })}>
       <WagmiConfig client={wagmiClient}>
         <RainbowKitProvider
           appInfo={appInfo}
@@ -98,6 +103,7 @@ export default function App({ Component, pageProps }: AppProps) {
           </Layout>
         </RainbowKitProvider>
       </WagmiConfig>
-    </ChakraProvider>
+      {/* </ChakraProvider> */}
+    </NextUIProvider>
   );
 }
