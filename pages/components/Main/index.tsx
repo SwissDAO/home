@@ -1,55 +1,52 @@
-import {
-  Box,
-  Container,
-  FlexProps,
-  Heading,
-  Stack,
-  Text,
-} from '@chakra-ui/react';
+import { Container, Text } from "@nextui-org/react";
 
-const Main = (props: FlexProps) => {
+const Main = () => {
   return (
-    <Container as="main" role="main" direction="row" py="16" {...props}>
-      <Container maxW={'3xl'}>
-        <Stack
-          as={Box}
-          textAlign={'center'}
-          spacing={{ base: 8, md: 14 }}
-          py={{ base: 20, md: 36 }}
-        >
-          <Heading
-            fontWeight={600}
-            fontSize={{ base: '2xl', sm: '4xl', md: '6xl' }}
-            lineHeight={'110%'}
-          >
-            The First DAO <br />
-            for{' '}
-            <Text bgGradient="linear(to-r, #E31D1C, #FF0080)" bgClip="text">
-              Switzerland.³
-            </Text>
-          </Heading>
-          <Stack textAlign={'center'}>
-            <Text fontSize="2xl">
-              ³ web3 spaces w/ Meetups, Workshops and Hackerhouses in real life
-            </Text>
-            <Text fontSize="2xl">
-              ³ Community spirit: Connect, Learn and Build
-            </Text>
-            <Text fontSize="2xl">³ Just do Web3: Take Ownership. LFG 🚀</Text>
-          </Stack>
-          <Text fontSize="2xl">
-            Grab a ☕️ and read our{' '}
-            <a
-              target="_blank"
-              rel="noreferrer"
-              href="https://docs.google.com/document/d/100hBiuGn7VzweSgTpl_SsJA6UjHcsh81tqXx0b2DyBk/edit#heading=h.aasa0wyt1wn"
-            >
-              📖
-            </a>
-            .
-          </Text>
+    <Container
+      display="flex"
+      direction="column"
+      justify="center"
+      alignContent="center"
+      css={{
+        height: '100%',
+        textAlign: 'center'
+      }}
+    >
+      <div>
+        <Text h1 css={{ margin: 0 }}>
+          The First DAO <br />
+          for
+        </Text>
+        <Text h1 css={{
+          textGradient: "90deg, #E31D1C, #FF0080",
+        }}>
+          Switzerland.³
+        </Text>
+      </div >
 
-          {/* <Stack
+      <Text h3>
+        ³ web3 spaces w/ Meetups, Workshops and Hackerhouses in real life
+      </Text>
+      <Text h3>
+        ³ Community spirit: Connect, Learn and Build
+      </Text>
+      <Text h3>
+        ³ Just do Web3: Take Ownership. LFG 🚀
+      </Text>
+
+      <Text h5>
+        Grab a ☕️ and read our{' '}
+        <a
+          target="_blank"
+          rel="noreferrer"
+          href="https://docs.google.com/document/d/100hBiuGn7VzweSgTpl_SsJA6UjHcsh81tqXx0b2DyBk/edit#heading=h.aasa0wyt1wn"
+        >
+          📖
+        </a>
+        .
+      </Text>
+
+      {/* <Stack
               direction={'column'}
               spacing={1}
               align={'center'}
@@ -60,7 +57,7 @@ const Main = (props: FlexProps) => {
               </NextLink>
             </Button>
           </Stack> */}
-          {/* <Stack
+      {/* <Stack
             direction={'column'}
             spacing={3}
             align={'center'}
@@ -72,9 +69,7 @@ const Main = (props: FlexProps) => {
               </NextLink>
             </Button>
           </Stack> */}
-        </Stack>
-      </Container>
-    </Container>
+    </Container >
   );
 };
 

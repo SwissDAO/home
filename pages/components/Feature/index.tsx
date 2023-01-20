@@ -1,14 +1,4 @@
-import {
-  Button,
-  Card,
-  CardBody,
-  CardFooter,
-  CardHeader,
-  Flex,
-  Heading,
-  Image,
-  Text,
-} from '@chakra-ui/react';
+import { Card, Text, Image, Row, Button } from '@nextui-org/react';
 import { Feature as FeatureType } from '../../../shared/models';
 
 type Props = {
@@ -17,19 +7,15 @@ type Props = {
 
 const Feature = ({ feature }: Props) => {
   return (
-    <Flex
-      flexDirection={feature?.reversed ? 'column-reverse' : 'column'}
-      gap="1em"
-    >
-      <Card height="500px">
+    <>
+      <Card>
         <Image
           src={feature?.image || 'https://bit.ly/dan-abramov'}
           alt={''}
-          boxSize="100%"
           objectFit="fill"
         />
       </Card>
-      <Card height="max-content">
+      {/* <Card height="max-content">
         <CardHeader>
           <Heading size="md">{feature?.heading}</Heading>
         </CardHeader>
@@ -43,8 +29,30 @@ const Feature = ({ feature }: Props) => {
             </Button>
           </CardFooter>
         )}
+      </Card> */}
+
+      <Card css={{ mw: "max-content" }}>
+        <Card.Header>
+          <Text b>{feature?.heading}</Text>
+        </Card.Header>
+        <Card.Divider />
+        <Card.Body css={{ py: "$10" }}>
+          <Text>
+            Some quick example text to build on the card title and make up the
+            bulk of the cards content.
+          </Text>
+        </Card.Body>
+        <Card.Divider />
+        <Card.Footer>
+          <Row justify="flex-end">
+            <Button size="sm" light>
+              Cancel
+            </Button>
+            <Button size="sm">Agree</Button>
+          </Row>
+        </Card.Footer>
       </Card>
-    </Flex>
+    </>
   );
 };
 
