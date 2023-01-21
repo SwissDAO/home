@@ -13,7 +13,7 @@ export const blogarticles: Article[] = [
     },
     {
         id: "ab-2023-01",
-        category: 'DeFi',
+        category: 'MEV',
         title: 'How to beat the Odds in MEV competition',
         date: '2023-01-24',
         author: 'Amin B',
