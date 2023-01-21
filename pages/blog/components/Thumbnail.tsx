@@ -16,7 +16,7 @@ const Thumbnail = (props: IThumbnailProps) => {
         <Card css={{ mw: "600px", minWidth: "375px", "margin-top": "2rem", "border-radius": "0.35rem", "padding": "2rem" }}>
             <Card.Body>
             <Card.Header>
-                <Container fluid css={{ "height": "300px", "objectFit": 'cover', "position": "relative"}}>
+                <Container fluid css={{ "min-height": "100px", "objectFit": 'cover', "position": "relative","aspectRatio": "16/9"}}>
                     <Image src={blog.coverImage} fill alt={blog.title}></Image>
                 </Container>
             </Card.Header>
