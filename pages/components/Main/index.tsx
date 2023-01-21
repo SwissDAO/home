@@ -8,7 +8,7 @@ const Main = () => {
       justify="center"
       alignContent="center"
       css={{
-        height: '100%',
+        height: '100vh',
         textAlign: 'center'
       }}
     >

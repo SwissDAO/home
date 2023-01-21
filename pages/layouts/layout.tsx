@@ -12,11 +12,10 @@ export default function Layout({ children }: { children: ReactNode }) {
         <meta property="og:title" content="swissDAO" key="title" />
       </Head>
       <Navbar />
-      <main>
-        <Container css={{ height: '100vh' }} fluid >
-          {children}
-        </Container>
-      </main>
+
+      <Container fluid >
+        {children}
+      </Container>
       <Footer />
     </>
   );

@@ -8,18 +8,18 @@ const Navbar = () => {
   const { isConnected } = useAccount();
 
   const navItems = [
-    {
-      label: 'About',
-      link: '/about'
-    },
+    // {
+    //   label: 'About',
+    //   link: '/about'
+    // },
     {
       label: 'Blog',
       link: '/blog'
     },
-    {
-      label: 'Events',
-      link: '/events'
-    },
+    // {
+    //   label: 'Events',
+    //   link: '/events'
+    // },
     {
       label: isConnected ? 'Your Membership' : 'Membership',
       link: '/membership'
@@ -49,7 +49,7 @@ const Navbar = () => {
         ))}
 
         <NextUiNavbar.Item>
-          <ConnectButton />
+          {process.env.NODE_ENV === 'development' && <ConnectButton />}
         </NextUiNavbar.Item>
       </NextUiNavbar.Content>
       <NextUiNavbar.Toggle aria-label="toggle navigation" showIn="xs" />
@@ -61,7 +61,7 @@ const Navbar = () => {
         ))}
 
         <NextUiNavbar.CollapseItem>
-          <ConnectButton />
+          {process.env.NODE_ENV === 'development' && <ConnectButton />}
         </NextUiNavbar.CollapseItem>
       </NextUiNavbar.Collapse>
     </NextUiNavbar>
