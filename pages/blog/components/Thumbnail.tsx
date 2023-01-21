@@ -3,16 +3,17 @@ import { Article } from "../../../models/article";
 import Image from "next/image";
 
 interface IThumbnailProps {
+    id: string
     blog: Article
 }
 
 const Thumbnail = (props: IThumbnailProps) => {
     const { blog } = props;
 
-    // get height of image via cms
+    // get height of image via cms, maybe better than just 300px
     
     return (
-        <Card css={{ mw: "600px", "margin-top": "2rem", "border-radius": "0.35rem", "padding": "2rem" }}>
+        <Card css={{ mw: "600px", minWidth: "375px", "margin-top": "2rem", "border-radius": "0.35rem", "padding": "2rem" }}>
             <Card.Body>
             <Card.Header>
                 <Container fluid css={{ "height": "300px", "objectFit": 'cover', "position": "relative"}}>

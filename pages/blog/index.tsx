@@ -9,13 +9,13 @@ interface IBlogProps {}
 
 const Blog = (props: IBlogProps) => {
   return (
-    <Container fluid display="flex" justify="center" direction="row" css={{"padding-top": "4rem"}}>
+    <Container fluid display="flex" alignItems="center" direction="column" css={{"padding-top": "4rem", "padding-bottom": "8rem"}}>
       <h1>Blog</h1>
-      <Container md display="flex" alignContent="center" direction="column" css={{"padding-top": "2rem"}}>
+      <Container fluid display="flex" alignContent="center" direction="column" css={{"padding-top": "2rem" }}>
         {
-          blogarticles.slice(0,2).map((blog: Article)=> {
+          blogarticles.map((blog: Article)=> {
             return(
-              <Thumbnail blog={blog}></Thumbnail>
+              <Thumbnail id={blog.id} blog={blog}></Thumbnail>
               )
             })
         }

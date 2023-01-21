@@ -13,7 +13,7 @@ export default function Layout({ children }: { children: ReactNode }) {
       </Head>
       <Navbar />
       <main>
-        <Container css={{ height: '100vh' }} fluid >
+        <Container fluid css={{"margin": "0 auto", "padding": "0 0"}}>
           {children}
         </Container>
       </main>
