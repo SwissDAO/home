@@ -1,5 +1,6 @@
 import { Button, Card, Container, Grid, Text } from "@nextui-org/react";
 import Image from 'next/image';
+import { useRef } from "react";
 import { useAccount } from "wagmi";
 import Content from "../components/Content";
 
@@ -8,24 +9,25 @@ type GridItemProps = {
   image: string;
   lead: string;
   description: string;
+  tier?: 'bronze' | 'silver' | 'gold'
 };
 
 const features: GridItemProps[] = [
   {
     xs: 6,
-    image: '/images/membershipcard.svg',
+    image: '/images/membershipcard2.svg',
     lead: 'Beautiful websites',
     description: 'Make beautiful websites regardless of your design experience.'
   },
   {
     xs: 6,
-    image: '/images/membershipcard.svg',
+    image: '/images/membershipcard3.svg',
     lead: 'Beautiful websites',
     description: 'Make beautiful websites regardless of your design experience.'
   },
   {
     xs: 12,
-    image: '/images/membershipcard.svg',
+    image: '/images/membershipcard5.svg',
     lead: 'Beautiful websites',
     description: 'Make beautiful websites regardless of your design experience.'
   },
@@ -33,24 +35,28 @@ const features: GridItemProps[] = [
     xs: 4,
     image: '/images/bronze.png',
     lead: 'Beautiful websites',
-    description: 'Make beautiful websites regardless of your design experience.'
+    description: 'Make beautiful websites regardless of your design experience.',
+    tier: 'bronze'
   },
   {
     xs: 4,
     image: '/images/membershipcard.svg',
     lead: 'Beautiful websites',
-    description: 'Make beautiful websites regardless of your design experience.'
+    description: 'Make beautiful websites regardless of your design experience.',
+    tier: 'silver'
   },
   {
     xs: 4,
     image: '/images/membershipcard.svg',
     lead: 'Beautiful websites',
-    description: 'Make beautiful websites regardless of your design experience.'
+    description: 'Make beautiful websites regardless of your design experience.',
+    tier: 'gold'
   },
 ];
 
 const Membership = () => {
   const { isConnected } = useAccount();
+  const cardRef = useRef<HTMLDivElement>(null);
 
   const GridItem = ({ image, lead, description }: Omit<GridItemProps, 'xs'>) => {
     return (
@@ -77,6 +83,19 @@ const Membership = () => {
     );
   };
 
+  const TierItem = ({ tier }: { tier: string }) => {
+    return (
+      <Card ref={cardRef} css={{ mw: "100%", height: '$8xl', p: "$12", background: 'none' }} variant="bordered" isHoverable>
+        <Image
+          src={`/images/${tier}.png`}
+          alt=""
+          fill
+          style={{ objectFit: 'fill' }}
+        />
+      </Card>
+    )
+  }
+
   return isConnected ? <Content /> : (
     <Container css={{
       padding: '$md',
@@ -92,12 +111,17 @@ const Membership = () => {
       </Container>
       <Grid.Container gap={1} justify="center" direction="column" css={{
         '@xs': {
-          flexDirection: 'row'
+          flexDirection: 'row',
+          width: '100%'
         },
       }}>
         {features.map((item, i) => (
           <Grid key={i} xs={item.xs}>
-            <GridItem image={item.image} lead={item.lead} description={item.description} />
+            {item.xs === 4 ? (
+              <TierItem tier={item.tier || 'bronze'} />
+            ) : (
+              <GridItem image={item.image} lead={item.lead} description={item.description} />
+            )}
           </Grid>
         ))}
       </Grid.Container>
