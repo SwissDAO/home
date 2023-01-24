@@ -1,8 +1,8 @@
-import { Navbar as NextUiNavbar } from "@nextui-org/react";
-import { ConnectButton } from "@rainbow-me/rainbowkit";
+import { Navbar as NextUiNavbar } from '@nextui-org/react';
+import { ConnectButton } from '@rainbow-me/rainbowkit';
 import Link from 'next/link';
 import { useAccount } from 'wagmi';
-import Logo from "../Logo";
+import Logo from '../Logo';
 
 const Navbar = () => {
   const { isConnected } = useAccount();
@@ -14,7 +14,7 @@ const Navbar = () => {
     // },
     {
       label: 'Blog',
-      link: '/blog'
+      link: '/blog',
     },
     // {
     //   label: 'Events',
@@ -22,20 +22,22 @@ const Navbar = () => {
     // },
     {
       label: isConnected ? 'Your Membership' : 'Membership',
-      link: '/membership'
+      link: '/membership',
     },
   ];
 
-  const renderNavItem = (item: { label: string, link: string }, i: number) => (
-    <Link key={i} href={item.link}>{item.label}</Link>
-  )
+  const renderNavItem = (item: { label: string; link: string }, i: number) => (
+    <Link key={i} href={item.link}>
+      {item.label}
+    </Link>
+  );
 
   return (
     <NextUiNavbar isBordered variant={'static'}>
       <NextUiNavbar.Brand
         css={{
-          "@xs": {
-            w: "12%",
+          '@xs': {
+            w: '12%',
           },
         }}
       >
@@ -44,9 +46,7 @@ const Navbar = () => {
         </Link>
       </NextUiNavbar.Brand>
       <NextUiNavbar.Content hideIn="xs">
-        {navItems.map((item, i) => (
-          renderNavItem(item, i)
-        ))}
+        {navItems.map((item, i) => renderNavItem(item, i))}
 
         {process.env.NODE_ENV === 'development' && (
           <NextUiNavbar.Item>

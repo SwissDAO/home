@@ -4,13 +4,13 @@ import {
   connectorsForWallets,
   getDefaultWallets,
   lightTheme,
-  RainbowKitProvider
+  RainbowKitProvider,
 } from '@rainbow-me/rainbowkit';
 import '@rainbow-me/rainbowkit/styles.css';
 import {
   argentWallet,
   ledgerWallet,
-  trustWallet
+  trustWallet,
 } from '@rainbow-me/rainbowkit/wallets';
 import { goerli } from '@wagmi/core/chains';
 import merge from 'lodash/merge';
@@ -20,6 +20,21 @@ import { infuraProvider } from 'wagmi/providers/infura';
 import { publicProvider } from 'wagmi/providers/public';
 import Layout from '../shared/layouts/layout';
 import '../styles/globals.scss';
+
+const avenir = localFont({
+  src: [
+    {
+      path: '../public/fonts/Avenir-Medium.woff2',
+      weight: '400',
+      style: 'normal',
+    },
+    {
+      path: '../public/fonts/Avenir-Heavy.woff2',
+      weight: '800',
+      style: 'normal',
+    },
+  ],
+});
 
 const { chains, provider, webSocketProvider } = configureChains(
   [goerli],
@@ -84,7 +99,7 @@ const wagmiClient = createClient({
 });
 
 const nextUiTheme = createTheme({
-  type: "dark",
+  type: 'dark',
   theme: {
     colors: {
       primary: '#E31D1C',
@@ -94,9 +109,9 @@ const nextUiTheme = createTheme({
       link: '#FFFFFF',
     },
     space: {},
-    fonts: {}
-  }
-})
+    fonts: {},
+  },
+});
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
@@ -108,9 +123,11 @@ export default function App({ Component, pageProps }: AppProps) {
           modalSize={'compact'}
           theme={customTheme}
         >
-          <Layout>
-            <Component {...pageProps} />
-          </Layout>
+          <main className={avenir.className}>
+            <Layout>
+              <Component {...pageProps} />
+            </Layout>
+          </main>
         </RainbowKitProvider>
       </WagmiConfig>
     </NextUIProvider>

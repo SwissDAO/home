@@ -6,7 +6,7 @@ import {
   useAccount,
   useContractRead,
   useContractWrite,
-  usePrepareContractWrite
+  usePrepareContractWrite,
 } from 'wagmi';
 import { CONFIG } from '../../const';
 import Feature from '../Feature';

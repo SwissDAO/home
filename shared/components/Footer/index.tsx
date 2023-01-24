@@ -1,7 +1,7 @@
 import { FaDiscord, FaGithub, FaLinkedin, FaTwitter } from 'react-icons/fa';
 
-import { Container, Grid, Link, Text } from "@nextui-org/react";
-import LogoMinimal from "../LogoMinimal";
+import { Container, Grid, Link, Text } from '@nextui-org/react';
+import LogoMinimal from '../LogoMinimal';
 
 const Footer = () => {
   return (
@@ -11,7 +11,7 @@ const Footer = () => {
         <Grid.Container
           gap={2}
           justify="center"
-          direction='column'
+          direction="column"
           css={{
             '@xs': {
               flexDirection: 'row',
@@ -46,7 +46,10 @@ const Footer = () => {
             </Text>
 
             <div style={{ display: 'flex', gap: '1em' }}>
-              <Link href="https://www.linkedin.com/company/swissdaospace/" target="_blank">
+              <Link
+                href="https://www.linkedin.com/company/swissdaospace/"
+                target="_blank"
+              >
                 <FaLinkedin fontSize="1.25rem" />
               </Link>
 
@@ -58,7 +61,10 @@ const Footer = () => {
                 <FaTwitter fontSize="1.25rem" />
               </Link>
 
-              <Link href="https://discord.com/invite/5kvQ3Q6G4x" target="_blank">
+              <Link
+                href="https://discord.com/invite/5kvQ3Q6G4x"
+                target="_blank"
+              >
                 <FaDiscord fontSize="1.25rem" />
               </Link>
             </div>
@@ -66,7 +72,7 @@ const Footer = () => {
         </Grid.Container>
       </Container>
     </footer>
-  )
-}
+  );
+};
 
 export default Footer;

@@ -3,7 +3,7 @@ import {
   useAccount,
   useContractWrite,
   usePrepareContractWrite,
-  useWaitForTransaction
+  useWaitForTransaction,
 } from 'wagmi';
 import { CONFIG } from '../../const';
 
