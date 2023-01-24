@@ -2,7 +2,7 @@ import { Button, Card, Container, Grid, Text } from "@nextui-org/react";
 import Image from 'next/image';
 import { useRef } from "react";
 import { useAccount } from "wagmi";
-import Content from "../components/Content";
+import Content from "../../shared/components/Content";
 
 type GridItemProps = {
   xs: number;
@@ -54,7 +54,7 @@ const features: GridItemProps[] = [
   },
 ];
 
-const Membership = () => {
+export default function Membership() {
   const { isConnected } = useAccount();
   const cardRef = useRef<HTMLDivElement>(null);
 
@@ -132,5 +132,3 @@ const Membership = () => {
     </Container>
   );
 };
-
-export default Membership;

@@ -48,9 +48,11 @@ const Navbar = () => {
           renderNavItem(item, i)
         ))}
 
-        <NextUiNavbar.Item>
-          {process.env.NODE_ENV === 'development' && <ConnectButton />}
-        </NextUiNavbar.Item>
+        {process.env.NODE_ENV === 'development' && (
+          <NextUiNavbar.Item>
+            <ConnectButton />
+          </NextUiNavbar.Item>
+        )}
       </NextUiNavbar.Content>
       <NextUiNavbar.Toggle aria-label="toggle navigation" showIn="xs" />
       <NextUiNavbar.Collapse>
@@ -60,9 +62,11 @@ const Navbar = () => {
           </NextUiNavbar.CollapseItem>
         ))}
 
-        <NextUiNavbar.CollapseItem>
-          {process.env.NODE_ENV === 'development' && <ConnectButton />}
-        </NextUiNavbar.CollapseItem>
+        {process.env.NODE_ENV === 'development' && (
+          <NextUiNavbar.CollapseItem>
+            <ConnectButton />
+          </NextUiNavbar.CollapseItem>
+        )}
       </NextUiNavbar.Collapse>
     </NextUiNavbar>
   );

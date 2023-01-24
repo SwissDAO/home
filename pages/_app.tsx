@@ -1,3 +1,4 @@
+import localFont from '@next/font/local';
 import { createTheme, NextUIProvider } from '@nextui-org/react';
 import {
   connectorsForWallets,
@@ -17,24 +18,8 @@ import type { AppProps } from 'next/app';
 import { configureChains, createClient, WagmiConfig } from 'wagmi';
 import { infuraProvider } from 'wagmi/providers/infura';
 import { publicProvider } from 'wagmi/providers/public';
+import Layout from '../shared/layouts/layout';
 import '../styles/globals.scss';
-import Layout from './layouts/layout';
-import localFont from '@next/font/local'
-
-const avenir = localFont({
-  src: [
-    {
-      path: '../public/fonts/Avenir-Medium.woff2',
-      weight: '400',
-      style: 'normal',
-    },
-    {
-      path: '../public/fonts/Avenir-Heavy.woff2',
-      weight: '800',
-      style: 'normal',
-    },
-  ],
-});
 
 const { chains, provider, webSocketProvider } = configureChains(
   [goerli],
@@ -123,11 +108,9 @@ export default function App({ Component, pageProps }: AppProps) {
           modalSize={'compact'}
           theme={customTheme}
         >
-          <main className={avenir.className}>
-            <Layout>
-              <Component {...pageProps} />
-            </Layout>
-          </main>
+          <Layout>
+            <Component {...pageProps} />
+          </Layout>
         </RainbowKitProvider>
       </WagmiConfig>
     </NextUIProvider>
