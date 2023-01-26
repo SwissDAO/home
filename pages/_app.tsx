@@ -108,8 +108,9 @@ const nextUiTheme = createTheme({
       gradient: 'linear-gradient(90deg, $primary 100%, $secondary 100%)',
       link: '#FFFFFF',
     },
-    space: {},
-    fonts: {},
+    fonts: {
+      sans: "Avenir"
+    },
   },
 });
 

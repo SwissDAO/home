@@ -13,6 +13,41 @@ type GridItemProps = {
   tier?: 'bronze' | 'silver' | 'gold';
 };
 
+const descriptions = [
+  {
+    title: 'Unique ID',
+    content: 'Distinguish from other tokens'
+  },
+  {
+    title: 'Proof of membership',
+    content: 'Proves membership in group or community'
+  },
+  {
+    title: 'Exclusive Access',
+    content: 'To private communities, events, or merchandise'
+  },
+  {
+    title: 'Discounts',
+    content: 'On products or services'
+  },
+  {
+    title: 'Digital assets',
+    content: 'Artwork, music, videos or other files'
+  },
+  {
+    title: 'Token-based Access',
+    content: 'To membership benefits or exclusive events'
+  },
+  {
+    title: 'Transferable',
+    content: 'Ownership can be transferred'
+  },
+  {
+    title: 'Immutable',
+    content: 'Recorded on blockchain, providing ownership and transfer history'
+  },
+];
+
 const features: GridItemProps[] = [
   {
     xs: 12,
@@ -35,30 +70,6 @@ const features: GridItemProps[] = [
     description:
       'Make beautiful websites regardless of your design experience.',
   },
-  // {
-  //   xs: 4,
-  //   image: '/images/bronze.png',
-  //   lead: 'Beautiful websites',
-  //   description:
-  //     'Make beautiful websites regardless of your design experience.',
-  //   tier: 'bronze',
-  // },
-  // {
-  //   xs: 4,
-  //   image: '/images/membershipcard.svg',
-  //   lead: 'Beautiful websites',
-  //   description:
-  //     'Make beautiful websites regardless of your design experience.',
-  //   tier: 'silver',
-  // },
-  // {
-  //   xs: 4,
-  //   image: '/images/membershipcard.svg',
-  //   lead: 'Beautiful websites',
-  //   description:
-  //     'Make beautiful websites regardless of your design experience.',
-  //   tier: 'gold',
-  // },
 ];
 
 export default function Membership() {
@@ -70,26 +81,6 @@ export default function Membership() {
     lead,
     description,
   }: Omit<GridItemProps, 'xs'>) => {
-    // return (
-    //   <Card
-    //     css={{ mw: '100%', height: '$8xl', p: '$12', background: 'none' }}
-    //     variant="bordered"
-    //     isHoverable
-    //   >
-    //     <div
-    //       style={{ display: 'flex', justifyContent: 'center', height: '70%' }}
-    //     >
-    //       <Image height={300} width={200} src={image} alt="" />
-    //     </div>
-
-    //     <div style={{ height: '30%' }}>
-    //       <Text h3>{lead}</Text>
-
-    //       <Text>{description}</Text>
-    //     </div>
-    //   </Card>
-    // );
-
     return (
       <Card
         css={{ mw: '100%', height: '$8xl', p: '$12', background: 'none', display: 'flex', flexDirection: 'row', alignItems: 'center' }}
@@ -131,24 +122,6 @@ export default function Membership() {
     );
   };
 
-  const TierItem = ({ tier }: { tier: string }) => {
-    return (
-      <Card
-        ref={cardRef}
-        css={{ mw: '100%', height: '$8xl', p: '$12', background: 'none' }}
-        variant="bordered"
-        isHoverable
-      >
-        <Image
-          src={`/images/${tier}.png`}
-          alt=""
-          fill
-          style={{ objectFit: 'fill' }}
-        />
-      </Card>
-    );
-  };
-
   return isConnected ? (
     <Content />
   ) : (
@@ -178,18 +151,17 @@ export default function Membership() {
           What&apos;s shipped?!.
         </Text>
 
-        {/* TODO Real Features  */}
         <Grid.Container gap={2}>
-          {[1, 2, 3, 4, 5, 6, 7, 8].map((_, i) => (
-            <Grid key={i} xs={12} sm={6} md={3} style={{ display: 'flex', gap: '1em', paddingBottom: '2em' }} direction="column" justify="center" alignItems="center">
+          {descriptions.map((item, i) => (
+            <Grid key={i} xs={12} sm={6} md={3} style={{ display: 'flex', textAlign: 'center', gap: '1em', paddingBottom: '2em' }} direction="column" justify="center" alignItems="center">
               <FaGithub fontSize={'2em'} />
 
               <Text h3 style={{ margin: 0 }}>
-                Built for speed
+                {item.title}
               </Text>
 
               <Text>
-                Instantly sync your notes across devices.
+                {item.content}
               </Text>
             </Grid>
           ))}
@@ -210,15 +182,11 @@ export default function Membership() {
       >
         {features.map((item, i) => (
           <Grid key={i} xs={item.xs}>
-            {/* {item.xs === 4 ? (
-              <TierItem tier={item.tier || 'bronze'} />
-            ) : ( */}
             <GridItem
               image={item.image}
               lead={item.lead}
               description={item.description}
             />
-            {/* )} */}
           </Grid>
         ))}
       </Grid.Container>
@@ -228,49 +196,15 @@ export default function Membership() {
           Get bounties on the way!
         </Text>
 
-        {/* TODO Real Features  */}
         <Grid.Container gap={2}>
-          <Grid xs={12} md={4}>
+          <Grid xs={12}>
             <Card
               ref={cardRef}
               css={{ mw: '100%', height: '$8xl', p: '$12', background: 'none' }}
-              variant="bordered"
               isHoverable
             >
               <Image
-                src={`/images/${'bronze'}.png`}
-                alt=""
-                fill
-                style={{ objectFit: 'fill' }}
-              />
-            </Card>
-          </Grid>
-
-          <Grid xs={12} md={4}>
-            <Card
-              ref={cardRef}
-              css={{ mw: '100%', height: '$8xl', p: '$12', background: 'none' }}
-              variant="bordered"
-              isHoverable
-            >
-              <Image
-                src={`/images/${'bronze'}.png`}
-                alt=""
-                fill
-                style={{ objectFit: 'fill' }}
-              />
-            </Card>
-          </Grid>
-
-          <Grid xs={12} md={4}>
-            <Card
-              ref={cardRef}
-              css={{ mw: '100%', height: '$8xl', p: '$12', background: 'none' }}
-              variant="bordered"
-              isHoverable
-            >
-              <Image
-                src={`/images/${'bronze'}.png`}
+                src={`/images/tiers.svg`}
                 alt=""
                 fill
                 style={{ objectFit: 'fill' }}
@@ -286,35 +220,45 @@ export default function Membership() {
         </Text>
 
         <Collapse.Group bordered splitted>
-          <Collapse title="Option A">
+          <Collapse title="What is a membership NFT card?">
             <Text>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-              enim ad minim veniam, quis nostrud exercitation ullamco laboris
-              nisi ut aliquip ex ea commodo consequat.
+              A membership NFT card is a non-fungible token (NFT) that
+              represents membership in a club or organization.
+              It can be bought and sold like other NFTs, but it also
+              grants the holder certain benefits or access to exclusive
+              content or experiences.
             </Text>
           </Collapse>
-          <Collapse title="Option B">
+          <Collapse title="How does one acquire a membership NFT card?">
             <Text>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-              enim ad minim veniam, quis nostrud exercitation ullamco laboris
-              nisi ut aliquip ex ea commodo consequat.
+              Membership NFT cards can be acquired through a variety of means,
+              such as purchasing them on a marketplace, winning them in a contest,
+              or receiving them as a gift. They can also be minted by the organization
+              issuing the card, and made available for purchase directly from them.
             </Text>
           </Collapse>
-          <Collapse title="Option C">
+          <Collapse title="What are some benefits of owning a membership NFT card?">
             <Text>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-              enim ad minim veniam, quis nostrud exercitation ullamco laboris
-              nisi ut aliquip ex ea commodo consequat.
+              Benefits can vary depending on the organization issuing the card,
+              but they may include exclusive access to content or events,
+              discounts on merchandise or services, or special perks and privileges.
+            </Text>
+          </Collapse>
+          <Collapse title="Can a membership NFT card be transferred or sold?">
+            <Text>
+              Yes, as NFTs, membership NFT cards can be bought,
+              sold, and traded on the open market, just like any other NFT.
+            </Text>
+          </Collapse>
+          <Collapse title="What happens to my membership NFT card if the organization that issued it goes out of business?">
+            <Text>
+              The value and usefulness of the membership NFT card would likely be
+              affected if the organization that issued it goes out of business.
+              It may still hold value as a collectible item, but the benefits and
+              access associated with it would likely no longer be available.
             </Text>
           </Collapse>
         </Collapse.Group>
-      </Container>
-
-      <Container display="flex" justify="center" css={{ padding: '$xl' }}>
-        <Button bordered>Get Started</Button>
       </Container>
     </Container >
   );
