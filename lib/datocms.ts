@@ -1,8 +1,8 @@
 
 interface IRequestProps {
-    query: string
-    variables: string
-    preview: string
+    query?: string
+    variables?: string
+    preview?: boolean
 }
 
 export async function request(props: IRequestProps) {
