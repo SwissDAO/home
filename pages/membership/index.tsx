@@ -111,7 +111,7 @@ export default function Membership() {
               <FaGithub fontSize={'2em'} />
               <Text>
                 Frictionless thought capture
-                Record your ideas and to-do’s easily, so you never miss a thing.
+                Record your ideas and to-do&apos;s easily, so you never miss a thing.
               </Text>
             </Row>
           </div>
@@ -225,7 +225,7 @@ export default function Membership() {
             <Text>
               A membership NFT is a non-fungible token (NFT) that
               represents membership in the swissDAO community.
-              Our membership NFT is soulbound, meaning it's non-transferable. It
+              Our membership NFT is soulbound, meaning it&apos;s non-transferable. It
               grants the holder certain benefits or access to exclusive
               content or experiences.
             </Text>
@@ -244,12 +244,12 @@ export default function Membership() {
           </Collapse>
           <Collapse title="Can a membership NFT be transferred or sold?">
             <Text>
-              No. Our membership NFT is soulbound, meaning it's non-transferable. It reflects your relationship to the community. Your relationship to your mother can also not be traded, right?
+              No. Our membership NFT is soulbound, meaning it&apos;s non-transferable. It reflects your relationship to the community. Your relationship to your mother can also not be traded, right?
             </Text>
           </Collapse>
-          <Collapse title="Bronze, Silver and Gold, really? Haven't you thought of cooler level names?">
+          <Collapse title="Bronze, Silver and Gold, really? Haven&apos;t you thought of cooler level names?">
             <Text>
-              Don't worry, we agree but are still in heavy development of our platform. Why don't you come to our event and you share your ideas with us <span style={{textDecoration: 'underline'}}><Link href={'https://www.meetup.com/swissdao/'}>meetup.com/swissdao/</Link></span>
+              Don&apos;t worry, we agree but are still in heavy development of our platform. Why don&apos;t you come to our event and you share your ideas with us <span style={{textDecoration: 'underline'}}><Link href={'https://www.meetup.com/swissdao/'}>meetup.com/swissdao/</Link></span>
             </Text>
           </Collapse>
         </Collapse.Group>
