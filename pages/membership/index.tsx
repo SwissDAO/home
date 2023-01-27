@@ -16,35 +16,28 @@ type GridItemProps = {
 const descriptions = [
   {
     title: 'Unique ID',
-    content: 'Distinguish from other tokens'
+    content: 'Every swissDAO member is unique'
   },
   {
     title: 'Proof of membership',
-    content: 'Proves membership in group or community'
+    content: 'Proves membership in the community'
   },
   {
     title: 'Exclusive Access',
-    content: 'To private communities, events, or merchandise'
+    content: 'To events, job opportunities and revenue'
   },
+
   {
-    title: 'Discounts',
-    content: 'On products or services'
-  },
-  {
-    title: 'Digital assets',
-    content: 'Artwork, music, videos or other files'
-  },
-  {
-    title: 'Token-based Access',
-    content: 'To membership benefits or exclusive events'
-  },
-  {
-    title: 'Transferable',
-    content: 'Ownership can be transferred'
+    title: 'Soulbound',
+    content: 'Ownership cannot transferred'
   },
   {
     title: 'Immutable',
-    content: 'Recorded on blockchain, providing ownership and transfer history'
+    content: 'Recorded on blockchain'
+  },
+  {
+    title: 'Transparency',
+    content: 'Contribution history of every member'
   },
 ];
 
@@ -89,7 +82,7 @@ export default function Membership() {
       >
         <div style={{ height: '100%', width: '40%', display: 'flex', flexDirection: 'column', justifyContent: 'space-around' }}>
           <div>
-            <Text>All your notes, connected</Text>
+            <Text>All your contribution stored</Text>
 
             <Text h3>Give your brain superpowers</Text>
             <Text>
@@ -135,8 +128,8 @@ export default function Membership() {
     >
       <Container display="flex" direction='column' justify="center" alignItems="center" style={{ paddingBottom: '10em' }}>
         <Text h1>
-          Our Membership. <br />
-          A Special Card.
+          swissDAO 
+          Membership {' '}
         </Text>
 
         {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -148,12 +141,12 @@ export default function Membership() {
 
       <Container display="flex" justify="center" alignItems="center" style={{ paddingBottom: '10em' }}>
         <Text h1>
-          What&apos;s shipped?!.
+          Membership Features
         </Text>
 
         <Grid.Container gap={2}>
           {descriptions.map((item, i) => (
-            <Grid key={i} xs={12} sm={6} md={3} style={{ display: 'flex', textAlign: 'center', gap: '1em', paddingBottom: '2em' }} direction="column" justify="center" alignItems="center">
+            <Grid key={i} xs={12} sm={6} md={4} xl={2} style={{ display: 'flex', textAlign: 'center', gap: '1em', paddingBottom: '2em' }} direction="column" justify="center" alignItems="center">
               <FaGithub fontSize={'2em'} />
 
               <Text h3 style={{ margin: 0 }}>
@@ -168,7 +161,7 @@ export default function Membership() {
         </Grid.Container>
       </Container>
 
-      <Grid.Container
+      {/* <Grid.Container
         gap={5}
         justify="center"
         direction="column"
@@ -189,11 +182,11 @@ export default function Membership() {
             />
           </Grid>
         ))}
-      </Grid.Container>
+      </Grid.Container> */}
 
       <Container display="flex" justify="center" alignItems="center" style={{ paddingBottom: '10em' }}>
         <Text h1>
-          Get bounties on the way!
+          Collect XP and upgrade your NFT.
         </Text>
 
         <Grid.Container gap={2}>
@@ -220,42 +213,30 @@ export default function Membership() {
         </Text>
 
         <Collapse.Group bordered splitted>
-          <Collapse title="What is a membership NFT card?">
+          <Collapse title="What is a membership NFT?">
             <Text>
-              A membership NFT card is a non-fungible token (NFT) that
-              represents membership in a club or organization.
-              It can be bought and sold like other NFTs, but it also
+              A membership NFT is a non-fungible token (NFT) that
+              represents membership in the swissDAO community.
+              Our membership NFT is soulbound, meaning it's non-transferable. It
               grants the holder certain benefits or access to exclusive
               content or experiences.
             </Text>
           </Collapse>
-          <Collapse title="How does one acquire a membership NFT card?">
+          <Collapse title="How does one acquire a swissDAO membership NFT?">
             <Text>
-              Membership NFT cards can be acquired through a variety of means,
-              such as purchasing them on a marketplace, winning them in a contest,
-              or receiving them as a gift. They can also be minted by the organization
-              issuing the card, and made available for purchase directly from them.
+              The membership NFT can only be acquired by attending a swissDAO event or contributing to swissDAO. 
+              We think of the membership NFT as a way to acknowledge and measure contribution to our community.
             </Text>
           </Collapse>
-          <Collapse title="What are some benefits of owning a membership NFT card?">
+          <Collapse title="What are some benefits of owning a swissDAO membership NFT?">
             <Text>
-              Benefits can vary depending on the organization issuing the card,
-              but they may include exclusive access to content or events,
-              discounts on merchandise or services, or special perks and privileges.
+              swissDAO membership NFTs are dynamic soulbound NFTs. The NFT keeps track of contribution with a property we call experience points (XP).
+              With our education program, co-working, hacking and workshops members can earn XPs. Collected XPs allow members to find co-founders and find a job.
             </Text>
           </Collapse>
-          <Collapse title="Can a membership NFT card be transferred or sold?">
+          <Collapse title="Can a membership NFT be transferred or sold?">
             <Text>
-              Yes, as NFTs, membership NFT cards can be bought,
-              sold, and traded on the open market, just like any other NFT.
-            </Text>
-          </Collapse>
-          <Collapse title="What happens to my membership NFT card if the organization that issued it goes out of business?">
-            <Text>
-              The value and usefulness of the membership NFT card would likely be
-              affected if the organization that issued it goes out of business.
-              It may still hold value as a collectible item, but the benefits and
-              access associated with it would likely no longer be available.
+              No. Our membership NFT is soulbound, meaning it's non-transferable. It reflects your relationship to the community. Your relationship to your mother can also not be traded, right?
             </Text>
           </Collapse>
         </Collapse.Group>
