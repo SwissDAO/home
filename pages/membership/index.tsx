@@ -1,5 +1,7 @@
 import { Button, Card, Collapse, Container, Grid, Row, Text } from '@nextui-org/react';
+import { IdentificationIcon, CheckCircleIcon, KeyIcon, HeartIcon, LockClosedIcon, CubeTransparentIcon } from '@heroicons/react/20/solid'
 import Image from 'next/image';
+import Link from 'next/link';
 import { useRef } from 'react';
 import { FaGithub } from 'react-icons/fa';
 import { useAccount } from 'wagmi';
@@ -16,28 +18,34 @@ type GridItemProps = {
 const descriptions = [
   {
     title: 'Unique ID',
-    content: 'Every swissDAO member is unique'
+    content: 'Every swissDAO member is unique',
+    icon: <IdentificationIcon style={{ height: 40 }}></IdentificationIcon>
   },
   {
     title: 'Proof of membership',
-    content: 'Proves membership in the community'
+    content: 'Proves membership in the community',
+    icon: <CheckCircleIcon style={{ height: 40 }}></CheckCircleIcon>
   },
   {
     title: 'Exclusive Access',
-    content: 'To events, job opportunities and revenue'
+    content: 'To events, job opportunities and revenue',
+    icon: <KeyIcon style={{ height: 40 }}></KeyIcon>
   },
 
   {
     title: 'Soulbound',
-    content: 'Ownership cannot transferred'
+    content: 'Ownership cannot transferred',
+    icon: <HeartIcon style={{ height: 40 }}></HeartIcon>
   },
   {
     title: 'Immutable',
-    content: 'Recorded on blockchain'
+    content: 'Recorded on blockchain',
+    icon: <LockClosedIcon style={{ height: 40 }}></LockClosedIcon>
   },
   {
     title: 'Transparency',
-    content: 'Contribution history of every member'
+    content: 'Contribution history of every member',
+    icon: <CubeTransparentIcon style={{ height: 40 }}></CubeTransparentIcon>
   },
 ];
 
@@ -127,7 +135,7 @@ export default function Membership() {
       }}
     >
       <Container display="flex" direction='column' justify="center" alignItems="center" style={{ paddingBottom: '10em' }}>
-        <Text h1>
+        <Text h1 style={{ marginBottom: '3rem' }}>
           swissDAO 
           Membership {' '}
         </Text>
@@ -140,14 +148,14 @@ export default function Membership() {
       </Container>
 
       <Container display="flex" justify="center" alignItems="center" style={{ paddingBottom: '10em' }}>
-        <Text h1>
+        <Text h1 style={{ marginBottom: '3rem' }}>
           Membership Features
         </Text>
 
         <Grid.Container gap={2}>
           {descriptions.map((item, i) => (
             <Grid key={i} xs={12} sm={6} md={4} xl={2} style={{ display: 'flex', textAlign: 'center', gap: '1em', paddingBottom: '2em' }} direction="column" justify="center" alignItems="center">
-              <FaGithub fontSize={'2em'} />
+              {item.icon}
 
               <Text h3 style={{ margin: 0 }}>
                 {item.title}
@@ -185,7 +193,7 @@ export default function Membership() {
       </Grid.Container> */}
 
       <Container display="flex" justify="center" alignItems="center" style={{ paddingBottom: '10em' }}>
-        <Text h1>
+        <Text h1 style={{ marginBottom: '3rem' }}>
           Collect XP and upgrade your NFT.
         </Text>
 
@@ -208,7 +216,7 @@ export default function Membership() {
       </Container>
 
       <Container display="flex" direction='column' justify="center" alignItems="center" style={{ paddingBottom: '10em' }}>
-        <Text h1>
+        <Text h1 style={{ marginBottom: '3rem' }}>
           Frequently Asked Questions.
         </Text>
 
@@ -237,6 +245,11 @@ export default function Membership() {
           <Collapse title="Can a membership NFT be transferred or sold?">
             <Text>
               No. Our membership NFT is soulbound, meaning it's non-transferable. It reflects your relationship to the community. Your relationship to your mother can also not be traded, right?
+            </Text>
+          </Collapse>
+          <Collapse title="Bronze, Silver and Gold, really? Haven't you thought of cooler level names?">
+            <Text>
+              Don't worry, we agree but are still in heavy development of our platform. Why don't you come to our event and you share your ideas with us <span style={{textDecoration: 'underline'}}><Link href={'https://www.meetup.com/swissdao/'}>meetup.com/swissdao/</Link></span>
             </Text>
           </Collapse>
         </Collapse.Group>
