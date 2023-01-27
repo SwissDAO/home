@@ -9,9 +9,10 @@
     "prettier": "prettier --write --ignore-path .gitignore ."
   },
   "dependencies": {
-    "@chakra-ui/react": "^2.4.6",
     "@emotion/react": "^11.10.5",
     "@emotion/styled": "^11.10.5",
+    "@heroicons/react": "^2.0.14",
+    "@next/font": "^13.1.4",
     "@nextui-org/react": "^1.0.0-beta.12",
     "@rainbow-me/rainbowkit": "^0.8.1",
     "eslint": "8.31.0",

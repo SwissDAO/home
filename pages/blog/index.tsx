@@ -1,5 +1,3 @@
-const Blog = () => {
+export default function Blog() {
   return <p>Blog</p>;
-};
-
-export default Blog;
+}

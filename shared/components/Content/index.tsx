@@ -6,9 +6,9 @@ import {
   useAccount,
   useContractRead,
   useContractWrite,
-  usePrepareContractWrite
+  usePrepareContractWrite,
 } from 'wagmi';
-import { CONFIG } from '../../../shared/const';
+import { CONFIG } from '../../const';
 import Feature from '../Feature';
 import FeatureList from '../FeatureList';
 import Mint from '../Mint';

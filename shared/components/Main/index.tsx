@@ -1,4 +1,4 @@
-import { Container, Text } from "@nextui-org/react";
+import { Container, Text } from '@nextui-org/react';
 
 const Main = () => {
   return (
@@ -8,31 +8,28 @@ const Main = () => {
       justify="center"
       alignContent="center"
       css={{
-        height: '100%',
-        textAlign: 'center'
+        height: '100vh',
+        textAlign: 'center',
       }}
     >
-      <div>
-        <Text h1 css={{ margin: 0 }}>
-          The First DAO <br />
-          for
-        </Text>
-        <Text h1 css={{
-          textGradient: "90deg, #E31D1C, #FF0080",
-        }}>
-          Switzerland.³
-        </Text>
-      </div >
+      <Text h1 css={{ margin: 0 }}>
+        The First DAO <br />
+        for
+      </Text>
+      <Text
+        h1
+        css={{
+          textGradient: '90deg, #E31D1C, #FF0080',
+        }}
+      >
+        Switzerland.³
+      </Text>
 
       <Text h3>
         ³ web3 spaces w/ Meetups, Workshops and Hackerhouses in real life
       </Text>
-      <Text h3>
-        ³ Community spirit: Connect, Learn and Build
-      </Text>
-      <Text h3>
-        ³ Just do Web3: Take Ownership. LFG 🚀
-      </Text>
+      <Text h3>³ Community spirit: Connect, Learn and Build</Text>
+      <Text h3>³ Just do Web3: Take Ownership. LFG 🚀</Text>
 
       <Text h5>
         Grab a ☕️ and read our{' '}
@@ -69,7 +66,7 @@ const Main = () => {
               </NextLink>
             </Button>
           </Stack> */}
-    </Container >
+    </Container>
   );
 };
 

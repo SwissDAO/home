@@ -1,5 +1,5 @@
 import { Card, Text, Image, Row, Button } from '@nextui-org/react';
-import { Feature as FeatureType } from '../../../shared/models';
+import { Feature as FeatureType } from '../../models';
 
 type Props = {
   feature: FeatureType;
@@ -31,12 +31,12 @@ const Feature = ({ feature }: Props) => {
         )}
       </Card> */}
 
-      <Card css={{ mw: "max-content" }}>
+      <Card css={{ mw: 'max-content' }}>
         <Card.Header>
           <Text b>{feature?.heading}</Text>
         </Card.Header>
         <Card.Divider />
-        <Card.Body css={{ py: "$10" }}>
+        <Card.Body css={{ py: '$10' }}>
           <Text>
             Some quick example text to build on the card title and make up the
             bulk of the cards content.
