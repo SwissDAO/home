@@ -7,4 +7,5 @@ export type Article = {
     coverImage: string;
     content: string;
     abstract: string;
+    slug: string
 }
