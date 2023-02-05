@@ -109,7 +109,7 @@ const nextUiTheme = createTheme({
       link: '#FFFFFF',
     },
     fonts: {
-      sans: "Avenir"
+      sans: 'Avenir',
     },
   },
 });

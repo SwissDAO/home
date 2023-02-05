@@ -7,39 +7,113 @@ const Footer = () => {
   return (
     <footer>
       <hr />
-      <Container css={{ p: '$lg' }}>
-        <Grid.Container
-          gap={2}
-          justify="center"
-          direction="column"
-          css={{
-            '@xs': {
-              flexDirection: 'row',
-            },
-          }}
-        >
-          <Grid xs={3}>
-            <ul style={{ margin: 0 }}>
-              <li>
-                <LogoMinimal height={32} width={32} />
-              </li>
-            </ul>
+      <Container
+        css={{
+          '@md': {
+            padding: '$lg $4xl',
+          },
+        }}
+      >
+        <Grid.Container gap={2}>
+          <Grid
+            xs={12}
+            justify="space-between"
+            css={{
+              flexDirection: 'column',
+
+              '@xs': {
+                flexDirection: 'row',
+              },
+            }}
+          >
+            <div>
+              <LogoMinimal height={32} width={32} />
+              <Text css={{ paddingTop: '$5' }}>
+                The First DAO for Switzerland
+              </Text>
+            </div>
+
+            <Grid
+              xs={3}
+              css={{
+                '@xs': {
+                  justifyContent: 'flex-end',
+                },
+              }}
+            >
+              <ul style={{ margin: 0 }}>
+                <li>
+                  <Text color="secondary">DAO</Text>
+                </li>
+                <li>
+                  <Link href="" underline>
+                    Home
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/blog" underline>
+                    Blog
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/membership" underline>
+                    Membership
+                  </Link>
+                </li>
+              </ul>
+            </Grid>
+
+            <Grid
+              xs={3}
+              css={{
+                '@xs': {
+                  justifyContent: 'flex-end',
+                },
+              }}
+            >
+              <ul style={{ margin: 0 }}>
+                <li>
+                  <Text color="secondary">Resources</Text>
+                </li>
+                <li>
+                  <Link
+                    href="https://www.notion.so/swissdao"
+                    isExternal
+                    underline
+                  >
+                    Docs
+                  </Link>
+                </li>
+                <li>
+                  <Link underline>Support</Link>
+                </li>
+              </ul>
+            </Grid>
+
+            <Grid
+              xs={3}
+              css={{
+                '@xs': {
+                  justifyContent: 'flex-end',
+                },
+              }}
+            >
+              <ul style={{ margin: 0 }}>
+                <li>
+                  <Text color="secondary">Legal</Text>
+                </li>
+                <li>
+                  <Link href="" underline>
+                    Privacy Policy
+                  </Link>
+                </li>
+                <li>
+                  <Link underline>Terms of Use</Link>
+                </li>
+              </ul>
+            </Grid>
           </Grid>
-          <Grid xs={3}>
-            <ul style={{ margin: 0 }}>
-              <li>Home</li>
-              <li>About</li>
-              <li>Blog</li>
-              <li>Membership</li>
-            </ul>
-          </Grid>
-          <Grid xs={3}>
-            <ul style={{ margin: 0 }}>
-              <li>Privacy Policy</li>
-              <li>Terms of Use</li>
-            </ul>
-          </Grid>
-          <Grid xs={3} />
+
           <Grid xs={12} justify="space-between">
             <Text size="$lg">
               &copy; {new Date().getFullYear()} swiss DAO. All rights reserved.
