@@ -15,6 +15,7 @@
     "@next/font": "^13.1.4",
     "@nextui-org/react": "^1.0.0-beta.12",
     "@rainbow-me/rainbowkit": "^0.8.1",
+    "@vercel/analytics": "^0.1.8",
     "eslint": "8.31.0",
     "eslint-config-next": "13.1.1",
     "ethers": "^5.7.2",

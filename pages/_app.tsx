@@ -4,14 +4,15 @@ import {
   connectorsForWallets,
   getDefaultWallets,
   lightTheme,
-  RainbowKitProvider,
+  RainbowKitProvider
 } from '@rainbow-me/rainbowkit';
 import '@rainbow-me/rainbowkit/styles.css';
 import {
   argentWallet,
   ledgerWallet,
-  trustWallet,
+  trustWallet
 } from '@rainbow-me/rainbowkit/wallets';
+import { Analytics } from '@vercel/analytics/react';
 import { goerli } from '@wagmi/core/chains';
 import merge from 'lodash/merge';
 import type { AppProps } from 'next/app';
@@ -129,6 +130,7 @@ export default function App({ Component, pageProps }: AppProps) {
               <Component {...pageProps} />
             </Layout>
           </main>
+          <Analytics />
         </RainbowKitProvider>
       </WagmiConfig>
     </NextUIProvider>
