@@ -19,7 +19,7 @@ import type { AppProps } from 'next/app';
 import { configureChains, createClient, WagmiConfig } from 'wagmi';
 import { infuraProvider } from 'wagmi/providers/infura';
 import { publicProvider } from 'wagmi/providers/public';
-import Layout from '../shared/layouts/layout';
+import Layout from '../layouts/layout';
 import '../styles/globals.scss';
 
 const avenir = localFont({

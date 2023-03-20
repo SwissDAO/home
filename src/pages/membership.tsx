@@ -20,7 +20,7 @@ import Link from 'next/link';
 import { useRef } from 'react';
 import { FaGithub } from 'react-icons/fa';
 import { useAccount } from 'wagmi';
-import Content from '../../shared/components/Content';
+import Content from '../components/Content';
 
 type GridItemProps = {
   xs: number;
