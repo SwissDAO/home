@@ -22,19 +22,16 @@ import { publicProvider } from 'wagmi/providers/public';
 import Layout from '../layouts/layout';
 import '../styles/globals.scss';
 
-const avenir = localFont({
-  src: [
-    {
-      path: '../../public/fonts/Avenir-Medium.woff2',
-      weight: '400',
-      style: 'normal',
-    },
-    {
-      path: '../../public/fonts/Avenir-Heavy.woff2',
-      weight: '800',
-      style: 'normal',
-    },
-  ],
+const avenirMedium = localFont({
+  src: '../../public/fonts/Avenir-Medium.woff2',
+  weight: '400',
+  style: 'normal',
+});
+
+const avenirHeavy = localFont({
+  src: '../../public/fonts/Avenir-Heavy.woff2',
+  weight: '800',
+  style: 'normal',
 });
 
 const { chains, provider, webSocketProvider } = configureChains(
@@ -125,11 +122,15 @@ export default function App({ Component, pageProps }: AppProps) {
           modalSize={'compact'}
           theme={customTheme}
         >
-          <main className={avenir.className}>
-            <Layout>
-              <Component {...pageProps} />
-            </Layout>
-          </main>
+          <style jsx global>{`
+            html {
+              --font-base: ${avenirMedium.style.fontFamily};
+              --font-strong: ${avenirHeavy.style.fontFamily};
+            }
+          `}</style>
+          <Layout>
+            <Component {...pageProps} />
+          </Layout>
           <Analytics />
         </RainbowKitProvider>
       </WagmiConfig>
