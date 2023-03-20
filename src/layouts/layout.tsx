@@ -1,8 +1,8 @@
 import { Container } from '@nextui-org/react';
 import Head from 'next/head';
 import { ReactNode } from 'react';
-import Footer from '../components/Footer';
-import Navbar from '../components/Navbar';
+import Footer from '../components/footer/footer';
+import Navbar from '../components/navbar/navbar';
 
 export default function Layout({ children }: { children: ReactNode }) {
   return (

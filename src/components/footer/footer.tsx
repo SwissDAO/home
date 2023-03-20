@@ -1,7 +1,7 @@
 import { FaDiscord, FaGithub, FaLinkedin, FaTwitter } from 'react-icons/fa';
 
 import { Container, Grid, Link, Text } from '@nextui-org/react';
-import LogoMinimal from '../LogoMinimal';
+import LogoMinimal from '../logo-minimal/logo-minimal';
 
 const Footer = () => {
   return (

@@ -9,9 +9,9 @@ import {
   usePrepareContractWrite,
 } from 'wagmi';
 import { CONFIG } from '../../shared/const';
-import Feature from '../Feature';
-import FeatureList from '../FeatureList';
-import Mint from '../Mint';
+import Feature from '../feature/feature';
+import FeatureList from '../feature-list/feature-list';
+import Mint from '../mint/mint';
 
 const features = [
   {

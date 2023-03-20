@@ -2,7 +2,7 @@ import { Navbar as NextUiNavbar } from '@nextui-org/react';
 import { ConnectButton } from '@rainbow-me/rainbowkit';
 import Link from 'next/link';
 import { useAccount } from 'wagmi';
-import Logo from '../Logo';
+import Logo from '../logo/logo';
 
 const Navbar = () => {
   const { isConnected } = useAccount();
