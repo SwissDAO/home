@@ -25,12 +25,12 @@ import '../styles/globals.scss';
 const avenir = localFont({
   src: [
     {
-      path: '../public/fonts/Avenir-Medium.woff2',
+      path: '../../public/fonts/Avenir-Medium.woff2',
       weight: '400',
       style: 'normal',
     },
     {
-      path: '../public/fonts/Avenir-Heavy.woff2',
+      path: '../../public/fonts/Avenir-Heavy.woff2',
       weight: '800',
       style: 'normal',
     },
