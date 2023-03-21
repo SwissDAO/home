@@ -4,7 +4,7 @@ import styles from '../styles/module/home.module.scss';
 
 export default function Home() {
   return (
-    <div className={styles.container}>
+    <>
       <Section>
         <h1>
           The Swiss Web3 Builder
@@ -19,8 +19,27 @@ export default function Home() {
       </Section>
 
       <Section>
-        <GradientLine />
+        <div className={styles.grid}>
+          <div className={styles.gradientLine}>
+            <GradientLine />
+          </div>
+
+          <p>h1</p>
+          <h2>
+            <span className={styles.accent}>³ Find</span> peers to share your learning and building experience.
+          </h2>
+
+          <h2>
+            <span className={styles.accent}>³ Learn</span> with our workshops to accelerate your web3 journey.
+          </h2>
+          <p>h1</p>
+
+          <p>h1</p>
+          <h2>
+            <span className={styles.accent}>³ Build</span> with us a DAO that is going to be the home of web3 builders.
+          </h2>
+        </div>
       </Section>
-    </div>
+    </>
   );
 }
