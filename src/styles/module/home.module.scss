@@ -13,11 +13,17 @@
 .grid {
   display: grid;
   grid-template-columns: 1fr 0.1fr 1fr;
+  gap: 2em 0;
   height: 100%;
   width: 100%;
-}
+
+  .item {
+    justify-self: center;
+    align-self: center;
+  }
 
   .gradientLine {
     grid-row: 1 / 4;
     grid-column: 2; 
   }
+}
