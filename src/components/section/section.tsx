@@ -1,15 +1,10 @@
-import { ReactNode } from "react";
+import { ReactNode } from 'react';
 import styles from './section.module.scss';
 
 type Props = {
-  children: ReactNode
+  children: ReactNode;
 };
 
 export default function Section({ children }: Props) {
-
-  return (
-    <section className={styles.section}>
-      {children}
-    </section>
-  );
-};
+  return <section className={styles.section}>{children}</section>;
+}

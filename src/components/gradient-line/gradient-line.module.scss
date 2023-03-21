@@ -5,7 +5,11 @@
 
 .gradient {
   height: 50%;
-  background: -webkit-linear-gradient(90deg, var(--color-foreground), var(--color-background));
+  background: -webkit-linear-gradient(
+    90deg,
+    var(--color-foreground),
+    var(--color-background)
+  );
   -webkit-text-fill-color: transparent;
 
   &:last-child {

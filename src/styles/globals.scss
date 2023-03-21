@@ -9,10 +9,10 @@ $mq-breakpoints: (
 
 // CSS Variables
 :root {
-  --color-accent: #E31D1C;
+  --color-accent: #e31d1c;
   --color-foreground: #ffffff;
   --color-background: #000000;
-  --color-gradient-fadeout: #FF0080;
+  --color-gradient-fadeout: #ff0080;
 }
 
 html,
@@ -23,25 +23,32 @@ body {
   overflow-x: hidden;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   margin: 0;
   font-family: var(--font-strong);
 }
 
 h1 {
-  font-size: 3em
+  font-size: 3em;
 }
 
 h2 {
-  font-size: 2.25em
+  font-size: 2.25em;
 }
 
 h3 {
-  font-size: 1.5em
+  font-size: 1.5em;
 }
 
-h4, h5, h6 {
-  font-size: 1em
+h4,
+h5,
+h6 {
+  font-size: 1em;
 }
 
 .lead {

@@ -1,13 +1,13 @@
 .gradient {
   width: 100%;
-  background: -webkit-linear-gradient(0deg, #E31D1C, #FF0080);
+  background: -webkit-linear-gradient(0deg, #e31d1c, #ff0080);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
 .accent {
-  color: var(--color-accent)
+  color: var(--color-accent);
 }
 
 .grid {
@@ -24,6 +24,6 @@
 
   .gradientLine {
     grid-row: 1 / 4;
-    grid-column: 2; 
+    grid-column: 2;
   }
 }
