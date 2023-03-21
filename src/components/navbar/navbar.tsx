@@ -49,11 +49,11 @@ const Navbar = () => {
       <NextUiNavbar.Content hideIn="xs">
         {navItems.map((item, i) => renderNavItem(item, i))}
 
-        {process.env.NODE_ENV === 'development' && (
+        {/* {process.env.NODE_ENV === 'development' && (
           <NextUiNavbar.Item>
             <ConnectButton />
           </NextUiNavbar.Item>
-        )}
+        )} */}
       </NextUiNavbar.Content>
       <NextUiNavbar.Toggle aria-label="toggle navigation" showIn="xs" />
       <NextUiNavbar.Collapse>

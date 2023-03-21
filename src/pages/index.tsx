@@ -4,30 +4,15 @@ export default function Home() {
   return (
     <div className={styles.container}>
       <h1>
-        The First DAO <br />
-        for
+        The Swiss Web3 Builder
       </h1>
       <h1 className={styles.gradient}>
-        Switzerland.³
+        Community.³
       </h1>
 
-      <h3>
-        ³ web3 spaces w/ Meetups, Workshops and Hackerhouses in real life
-      </h3>
-      <h3>³ Community spirit: Connect, Learn and Build</h3>
-      <h3>³ Just do Web3: Take Ownership. LFG 🚀</h3>
-
-      <h5>
-        Grab a ☕️ and read our{' '}
-        <a
-          target="_blank"
-          rel="noreferrer"
-          href="https://docs.google.com/document/d/100hBiuGn7VzweSgTpl_SsJA6UjHcsh81tqXx0b2DyBk/edit#heading=h.aasa0wyt1wn"
-        >
-          📖
-        </a>
-        .
-      </h5>
+      <p className="lead">
+        <span className={styles.gradient}>³</span> Our goal is to connect builders with projects and join forces to build the new internet.
+      </p>
     </div>
   );
 }
