@@ -8,22 +8,23 @@ const Navbar = () => {
   const { isConnected } = useAccount();
 
   const navItems = [
-    // {
-    //   label: 'About',
-    //   link: '/about'
-    // },
     {
-      label: 'Blog',
-      link: '/blog',
+      // label: isConnected ? 'Your Membership' : 'Membership',
+      label: 'Membership',
+      link: '/membership',
     },
     // {
     //   label: 'Events',
     //   link: '/events'
     // },
     {
-      label: isConnected ? 'Your Membership' : 'Membership',
-      link: '/membership',
+      label: 'Blog',
+      link: '/blog',
     },
+    // {
+    //   label: 'Podcast',
+    //   link: '/podcast',
+    // },
   ];
 
   const renderNavItem = (item: { label: string; link: string }, i: number) => (
@@ -62,11 +63,11 @@ const Navbar = () => {
           </NextUiNavbar.CollapseItem>
         ))}
 
-        {process.env.NODE_ENV === 'development' && (
+        {/* {process.env.NODE_ENV === 'development' && (
           <NextUiNavbar.CollapseItem>
             <ConnectButton />
           </NextUiNavbar.CollapseItem>
-        )}
+        )} */}
       </NextUiNavbar.Collapse>
     </NextUiNavbar>
   );
