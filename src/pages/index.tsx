@@ -1,3 +1,4 @@
+import GradientLine from '../components/gradient-line/gradient-line';
 import styles from '../styles/module/home.module.scss';
 
 export default function Home() {
@@ -13,6 +14,8 @@ export default function Home() {
       <p className="lead">
         <span className={styles.gradient}>³</span> Our goal is to connect builders with projects and join forces to build the new internet.
       </p>
+
+      <GradientLine />
     </div>
   );
 }
