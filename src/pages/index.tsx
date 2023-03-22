@@ -2,8 +2,41 @@ import GradientLine from '../components/gradient-line/gradient-line';
 import Section from '../components/section/section';
 import styles from '../styles/module/home.module.scss';
 import Image from 'next/image';
+import { useEffect, useRef } from 'react';
+import gsap from "gsap";
+import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 
 export default function Home() {
+  gsap.registerPlugin(ScrollTrigger);
+
+  const triggerRef = useRef(null);
+  const flagRef = useRef(null);
+
+  useEffect(() => {
+    const scrollFx = gsap.fromTo(
+      flagRef.current,
+      {
+        rotation: -180,
+        opacity: 0,
+        y: 200
+      },
+      {
+        rotation: 0,
+        opacity: 1,
+        y: 0,
+        ease: "slow",
+        scrollTrigger: {
+          trigger: triggerRef.current,
+          start: "top center",
+          end: "bottom top",
+          scrub: true
+        }
+      }
+    );
+
+    return () => scrollFx?.scrollTrigger?.kill();
+  }, []);
+
   return (
     <>
       <Section>
@@ -53,7 +86,7 @@ export default function Home() {
             width={300}
             height={300}
           />
-          <h2 className={styles.item}>
+          <h2 ref={triggerRef} className={styles.item}>
             <span className={styles.accent}>³ Build</span> with us a DAO that is
             going to be the home of web3 builders.
           </h2>
@@ -67,7 +100,15 @@ export default function Home() {
 
         <div className={styles.image}>
           <Image
-            // className={styles.image}
+            ref={flagRef}
+            className={styles.flag}
+            src="/images/flag.svg"
+            alt="Illustration Build"
+            height={120}
+            width={80}
+          />
+
+          <Image
             src="/images/mountain.svg"
             alt="Illustration Build"
             fill

@@ -33,4 +33,15 @@
   position: relative;
   height: 100%;
   width: 100%;
+  z-index: 10;
+
+  .flag {
+    position: absolute;
+    height: 120px;
+    width: 80px;
+    top: 15.7%;
+    left: 45.3%;
+    z-index: 0;
+    transform-origin: 50px 150px;
+  }
 }
