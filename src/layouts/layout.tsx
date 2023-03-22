@@ -1,4 +1,3 @@
-import { Container } from '@nextui-org/react';
 import Head from 'next/head';
 import { ReactNode } from 'react';
 import Footer from '../components/footer/footer';
@@ -12,7 +11,7 @@ export default function Layout({ children }: { children: ReactNode }) {
         <meta property="og:title" content="swissDAO" key="title" />
       </Head>
       <Navbar />
-      <Container fluid>{children}</Container>
+      <main>{children}</main>
       <Footer />
     </>
   );

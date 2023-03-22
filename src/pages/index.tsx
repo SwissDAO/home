@@ -64,6 +64,15 @@ export default function Home() {
         <h2>
           <span className={styles.accent}>DAOtize</span> the world with us!
         </h2>
+
+        <div className={styles.image}>
+          <Image
+            // className={styles.image}
+            src="/images/mountain.svg"
+            alt="Illustration Build"
+            fill
+          />
+        </div>
       </Section>
     </>
   );
