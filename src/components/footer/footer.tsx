@@ -1,25 +1,51 @@
 import Link from 'next/link';
 import { FaLinkedin, FaGithub, FaTwitter, FaDiscord } from 'react-icons/fa';
 import GradientLine from '../gradient-line/gradient-line';
+import Logo from '../logo/logo';
 import Section from '../section/section';
 import styles from './footer.module.scss';
 
 const Footer = () => {
   return (
-    <Section>
-      <GradientLine horizontal />
-
+    <>
       <div className={styles.grid}>
-        <div className={styles.cta}>
-
+        <div className={styles.gradientLine}>
+          <GradientLine horizontal />
         </div>
 
-        <div className={styles.column}></div>
-        <div className={styles.column}></div>
-        <div className={styles.column}></div>
+        <div className={styles.cta}>
+          <Logo width={100} height={50} />
+
+          <p><span className={styles.accent}>Experience</span> the next generation of the internet.</p>
+        </div>
+
+        <div className={styles.column}>
+          <h4>Community</h4>
+          <p>Blog</p>
+          <p>Membership</p>
+          <p>Meetups</p>
+          <p>Contact</p>
+        </div>
+
+        <div className={styles.column}>
+          <h4>Labs</h4>
+          <p>About us</p>
+          <p>Projects</p>
+          <p>Vision</p>
+        </div>
+
+        <div className={styles.column}>
+          <h4>Resources</h4>
+          <p>Docs</p>
+          <p>Changelog</p>
+          <p>Brand</p>
+          <p>Terms of Service</p>
+        </div>
       </div>
 
-      <GradientLine horizontal />
+      {/* <div className={styles.gradientLine}>
+        <GradientLine horizontal />
+      </div> */}
 
       <div>
         &copy; {new Date().getFullYear()} swissDAO. All rights reserved.
@@ -46,7 +72,7 @@ const Footer = () => {
           <FaDiscord fontSize="1.25rem" />
         </Link>
       </div>
-    </Section>
+    </>
   );
 };
 

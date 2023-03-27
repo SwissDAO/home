@@ -1,10 +1,18 @@
 .container {
   height: 100%;
   width: 1px;
+  
+  &[data-horizontal="true"] {
+    display: flex;
+    height: 1px;
+    width: 100%;
+  }
 }
 
-.gradient {
+.gradient {  
   height: 50%;
+  width: 1px;
+
   background: -webkit-linear-gradient(
     90deg,
     var(--color-foreground),
@@ -15,8 +23,16 @@
   &:last-child {
     transform: rotate(180deg);
   }
-}
 
-.horizontal {
-  transform: rotate(90deg);
+  &[data-horizontal="true"] {
+    width: 50%;
+    height: 1px;
+
+    background: -webkit-linear-gradient(
+      180deg,
+      var(--color-foreground),
+      var(--color-background)
+    );
+    -webkit-text-fill-color: transparent;
+  }
 }

@@ -1,4 +1,22 @@
-.footer {
-  height: 100%;
+.grid {
   width: 100%;
+  display: grid;
+  grid-template-rows: 0.1fr 1fr 0.1fr;
+  grid-template-columns: 3fr 1fr 1fr 1fr;
+  padding: 0 5em;
+  text-align: start;
+
+  .gradientLine {
+    grid-row: 1;
+    grid-column: 1 / 5;
+  }
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+}
+
+.accent {
+  color: var(--color-accent);
 }
