@@ -1,6 +1,6 @@
 .gradient {
   width: 100%;
-  background: -webkit-linear-gradient(0deg, #e31d1c, #ff0080);
+  background: -webkit-linear-gradient(0deg, var(--color-accent), var(--color-gradient-fadeout));
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -33,24 +33,24 @@
   height: 100%;
 }
 
-.grid {
-  display: grid;
-  grid-template-columns: 1fr 0.1fr 1fr;
-  gap: 2em 0;
-  padding: 2em;
-  height: 100%;
-  width: 100%;
+// .grid {
+//   display: grid;
+//   grid-template-columns: 1fr 0.1fr 1fr;
+//   gap: 2em 0;
+//   padding: 2em;
+//   height: 100%;
+//   width: 100%;
 
-  .item {
-    justify-self: center;
-    align-self: center;
-  }
+//   .item {
+//     justify-self: center;
+//     align-self: center;
+//   }
 
-  .gradientLine {
-    grid-row: 1 / 4;
-    grid-column: 2;
-  }
-}
+//   .gradientLine {
+//     grid-row: 1 / 4;
+//     grid-column: 2;
+//   }
+// }
 
 .image {
   position: relative;
