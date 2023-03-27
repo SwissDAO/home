@@ -49,7 +49,58 @@ export default function Home() {
         </p>
       </Section>
 
-      <Section>
+      <div className={styles.wrapper}>
+        <Section>
+          <div className={styles.gradientLine}>
+            <GradientLine />
+          </div>
+
+          <div className={styles.item}>
+            <Image
+              src="/images/illustration_find.svg"
+              alt="Illustration Build"
+              width={400}
+              height={300}
+            />
+            <h2>
+              <span className={styles.accent}>³ Find</span> peers to share your
+              learning and building experience.
+            </h2>
+          </div>
+        </Section>
+
+        <Section>
+          <div className={styles.item}>
+            <h2>
+              <span className={styles.accent}>³ Learn</span> with our workshops to
+              accelerate your web3 journey.
+            </h2>
+            <Image
+              src="/images/illustration_learn.svg"
+              alt="Illustration Build"
+              width={300}
+              height={300}
+            />
+          </div>
+        </Section>
+
+        <Section>
+          <div className={styles.item}>
+            <Image
+              src="/images/illustration_build.svg"
+              alt="Illustration Build"
+              width={300}
+              height={300}
+            />
+            <h2 ref={triggerRef}>
+              <span className={styles.accent}>³ Build</span> with us a DAO that is
+              going to be the home of web3 builders.
+            </h2>
+          </div>
+        </Section>
+      </div>
+
+      {/* <Section>
         <div className={styles.grid}>
           <div className={styles.gradientLine}>
             <GradientLine />
@@ -91,7 +142,7 @@ export default function Home() {
             going to be the home of web3 builders.
           </h2>
         </div>
-      </Section>
+      </Section> */}
 
       <Section noPadding>
         <h2>
