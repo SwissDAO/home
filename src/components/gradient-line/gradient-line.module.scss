@@ -16,6 +16,7 @@
   background: -webkit-linear-gradient(
     90deg,
     var(--color-foreground),
+    var(--color-foreground) 66%,
     var(--color-background)
   );
   -webkit-text-fill-color: transparent;
