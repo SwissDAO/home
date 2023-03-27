@@ -2,13 +2,18 @@
   width: 100%;
   display: grid;
   grid-template-rows: 0.1fr 1fr 0.1fr;
-  grid-template-columns: 3fr 1fr 1fr 1fr;
-  padding: 0 5em;
+  grid-template-columns: 3fr 1fr 1fr 1fr 1fr;
+  padding: 5em;
+  gap: 5em;
   text-align: start;
 
   .gradientLine {
     grid-row: 1;
-    grid-column: 1 / 5;
+    grid-column: 1 / 6;
+
+    &:last-child {
+      grid-row: 3;
+    }
   }
 }
 
@@ -19,4 +24,16 @@
 
 .accent {
   color: var(--color-accent);
+}
+
+.subfooter {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 5em 5em;
+
+  .socials {
+    display: flex;
+    gap: 1em;
+  }
 }

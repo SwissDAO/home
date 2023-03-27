@@ -41,36 +41,38 @@ const Footer = () => {
           <p>Brand</p>
           <p>Terms of Service</p>
         </div>
+
+        <div className={styles.gradientLine}>
+          <GradientLine horizontal />
+        </div>
       </div>
 
-      {/* <div className={styles.gradientLine}>
-        <GradientLine horizontal />
-      </div> */}
-
-      <div>
+      <div className={styles.subfooter}>
         &copy; {new Date().getFullYear()} swissDAO. All rights reserved.
 
-        <Link
-          href="https://www.linkedin.com/company/swissdaospace/"
-          target="_blank"
-        >
-          <FaLinkedin fontSize="1.25rem" />
-        </Link>
+        <div className={styles.socials}>
+          <Link
+            href="https://www.linkedin.com/company/swissdaospace/"
+            target="_blank"
+          >
+            <FaLinkedin fontSize="1.25rem" />
+          </Link>
 
-        <Link href="https://github.com/SwissDAO" target="_blank">
-          <FaGithub fontSize="1.25rem" />
-        </Link>
+          <Link href="https://github.com/SwissDAO" target="_blank">
+            <FaGithub fontSize="1.25rem" />
+          </Link>
 
-        <Link href="https://twitter.com/swissDAOspace" target="_blank">
-          <FaTwitter fontSize="1.25rem" />
-        </Link>
+          <Link href="https://twitter.com/swissDAOspace" target="_blank">
+            <FaTwitter fontSize="1.25rem" />
+          </Link>
 
-        <Link
-          href="https://discord.com/invite/5kvQ3Q6G4x"
-          target="_blank"
-        >
-          <FaDiscord fontSize="1.25rem" />
-        </Link>
+          <Link
+            href="https://discord.com/invite/5kvQ3Q6G4x"
+            target="_blank"
+          >
+            <FaDiscord fontSize="1.25rem" />
+          </Link>
+        </div>
       </div>
     </>
   );
