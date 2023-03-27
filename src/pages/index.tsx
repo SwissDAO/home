@@ -93,7 +93,7 @@ export default function Home() {
         </div>
       </Section>
 
-      <Section>
+      <Section noPadding>
         <h2>
           <span className={styles.accent}>DAOtize</span> the world with us!
         </h2>

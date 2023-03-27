@@ -6,6 +6,11 @@
   text-align: center;
   margin-top: 5em;
   height: 100vh;
+  padding: 0 5em;
+
+  &[data-noPadding="true"] {
+    padding: 0;
+  }
 
   &:first-child {
     height: calc(100vh - var(--nextui--navbarHeight));
