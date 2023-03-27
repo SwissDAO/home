@@ -14,10 +14,16 @@
   position: relative;
 }
 
-.item {
+.section {
   display: grid;
   grid-template-columns: 1fr 1fr;
   align-items: center;
+  gap: 5em;
+
+  .item {
+    justify-self: center;
+    align-self: center;
+  }
 }
 
 .gradientLine {

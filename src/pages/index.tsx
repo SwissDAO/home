@@ -55,14 +55,15 @@ export default function Home() {
             <GradientLine />
           </div>
 
-          <div className={styles.item}>
+          <div className={styles.section}>
             <Image
+              className={styles.item}
               src="/images/illustration_find.svg"
               alt="Illustration Build"
               width={400}
               height={300}
             />
-            <h2>
+            <h2 className={styles.item}>
               <span className={styles.accent}>³ Find</span> peers to share your
               learning and building experience.
             </h2>
@@ -70,12 +71,13 @@ export default function Home() {
         </Section>
 
         <Section>
-          <div className={styles.item}>
-            <h2>
+          <div className={styles.section}>
+            <h2 className={styles.item}>
               <span className={styles.accent}>³ Learn</span> with our workshops to
               accelerate your web3 journey.
             </h2>
             <Image
+              className={styles.item}
               src="/images/illustration_learn.svg"
               alt="Illustration Build"
               width={300}
@@ -85,14 +87,15 @@ export default function Home() {
         </Section>
 
         <Section>
-          <div className={styles.item}>
+          <div className={styles.section}>
             <Image
+              className={styles.item}
               src="/images/illustration_build.svg"
               alt="Illustration Build"
               width={300}
               height={300}
             />
-            <h2 ref={triggerRef}>
+            <h2 ref={triggerRef} className={styles.item}>
               <span className={styles.accent}>³ Build</span> with us a DAO that is
               going to be the home of web3 builders.
             </h2>
