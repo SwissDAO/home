@@ -1,3 +1,5 @@
+@import 'sass-mq';
+
 .gradient {
   width: 100%;
   background: -webkit-linear-gradient(0deg, var(--color-accent), var(--color-gradient-fadeout));
@@ -20,9 +22,23 @@
   align-items: center;
   gap: 5em;
 
+  @include mq($until: 750px) {
+    display: flex;
+    flex-direction: column;
+  }
+
   .item {
     justify-self: center;
     align-self: center;
+  }
+
+  .horizontalLine {
+    height: 100%;
+    width: 100%;
+
+    @include mq($from: 750px) {
+      display: none;
+    }
   }
 }
 
@@ -31,6 +47,10 @@
   top: 0;
   left: 50%;
   height: 100%;
+
+  @include mq($until: 750px) {
+    display: none;
+  }
 }
 
 // .grid {

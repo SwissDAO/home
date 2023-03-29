@@ -63,6 +63,9 @@ export default function Home() {
               width={400}
               height={300}
             />
+            <div className={styles.horizontalLine}>
+              <GradientLine horizontal />
+            </div>
             <h2 className={styles.item}>
               <span className={styles.accent}>³ Find</span> peers to share your
               learning and building experience.
@@ -76,6 +79,9 @@ export default function Home() {
               <span className={styles.accent}>³ Learn</span> with our workshops to
               accelerate your web3 journey.
             </h2>
+            <div className={styles.horizontalLine}>
+              <GradientLine horizontal />
+            </div>
             <Image
               className={styles.item}
               src="/images/illustration_learn.svg"
@@ -95,6 +101,9 @@ export default function Home() {
               width={300}
               height={300}
             />
+            <div className={styles.horizontalLine}>
+              <GradientLine horizontal />
+            </div>
             <h2 ref={triggerRef} className={styles.item}>
               <span className={styles.accent}>³ Build</span> with us a DAO that is
               going to be the home of web3 builders.
