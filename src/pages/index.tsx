@@ -1,10 +1,11 @@
-import GradientLine from '../components/gradient-line/gradient-line';
-import Section from '../components/section/section';
-import styles from '../styles/module/home.module.scss';
-import Image from 'next/image';
-import { useEffect, useRef } from 'react';
 import gsap from "gsap";
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
+import Image from 'next/image';
+import { useEffect, useRef } from 'react';
+import GradientLine from '../components/gradient-line/gradient-line';
+import { LogoMountain } from '../components/logo-mountain/logo-mountain';
+import Section from '../components/section/section';
+import styles from '../styles/module/home.module.scss';
 
 export default function Home() {
   gsap.registerPlugin(ScrollTrigger);
@@ -112,71 +113,12 @@ export default function Home() {
         </Section>
       </div>
 
-      {/* <Section>
-        <div className={styles.grid}>
-          <div className={styles.gradientLine}>
-            <GradientLine />
-          </div>
-
-          <Image
-            className={styles.item}
-            src="/images/illustration_find.svg"
-            alt="Illustration Build"
-            width={400}
-            height={300}
-          />
-          <h2 className={styles.item}>
-            <span className={styles.accent}>³ Find</span> peers to share your
-            learning and building experience.
-          </h2>
-
-          <h2 className={styles.item}>
-            <span className={styles.accent}>³ Learn</span> with our workshops to
-            accelerate your web3 journey.
-          </h2>
-          <Image
-            className={styles.item}
-            src="/images/illustration_learn.svg"
-            alt="Illustration Build"
-            width={300}
-            height={300}
-          />
-
-          <Image
-            className={styles.item}
-            src="/images/illustration_build.svg"
-            alt="Illustration Build"
-            width={300}
-            height={300}
-          />
-          <h2 ref={triggerRef} className={styles.item}>
-            <span className={styles.accent}>³ Build</span> with us a DAO that is
-            going to be the home of web3 builders.
-          </h2>
-        </div>
-      </Section> */}
-
       <Section noPadding>
         <h2 ref={triggerRef}>
           <span className={styles.accent}>DAOtize</span> the world with us!
         </h2>
 
-        <div className={styles.image}>
-          <Image
-            ref={flagRef}
-            className={styles.flag}
-            src="/images/flag.svg"
-            alt="Illustration Build"
-            height={120}
-            width={80}
-          />
-
-          <Image
-            src="/images/mountain.svg"
-            alt="Illustration Build"
-            fill
-          />
-        </div>
+        <LogoMountain ref={flagRef} className={styles.flag} />
       </Section>
     </>
   );
