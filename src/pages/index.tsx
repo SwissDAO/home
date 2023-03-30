@@ -104,7 +104,7 @@ export default function Home() {
             <div className={styles.horizontalLine}>
               <GradientLine horizontal />
             </div>
-            <h2 ref={triggerRef} className={styles.item}>
+            <h2 className={styles.item}>
               <span className={styles.accent}>³ Build</span> with us a DAO that is
               going to be the home of web3 builders.
             </h2>
@@ -157,7 +157,7 @@ export default function Home() {
       </Section> */}
 
       <Section noPadding>
-        <h2>
+        <h2 ref={triggerRef}>
           <span className={styles.accent}>DAOtize</span> the world with us!
         </h2>
 
