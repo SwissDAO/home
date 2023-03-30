@@ -1,15 +1,15 @@
 .container {
   height: 100%;
   width: 1px;
-  
-  &[data-horizontal="true"] {
+
+  &[data-horizontal='true'] {
     display: flex;
     height: 1px;
     width: 100%;
   }
 }
 
-.gradient {  
+.gradient {
   height: 50%;
   width: 1px;
 
@@ -25,7 +25,7 @@
     transform: rotate(180deg);
   }
 
-  &[data-horizontal="true"] {
+  &[data-horizontal='true'] {
     width: 50%;
     height: 1px;
 

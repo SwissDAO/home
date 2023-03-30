@@ -1,4 +1,4 @@
-import gsap from "gsap";
+import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 import Image from 'next/image';
 import { useEffect, useRef } from 'react';
@@ -19,19 +19,19 @@ export default function Home() {
       {
         rotation: -180,
         opacity: 0,
-        y: 200
+        y: 200,
       },
       {
         rotation: 0,
         opacity: 1,
         y: 0,
-        ease: "slow",
+        ease: 'slow',
         scrollTrigger: {
           trigger: triggerRef.current,
-          start: "top center",
-          end: "bottom top",
-          scrub: true
-        }
+          start: 'top center',
+          end: 'bottom top',
+          scrub: true,
+        },
       }
     );
 
@@ -77,8 +77,8 @@ export default function Home() {
         <Section>
           <div className={styles.section}>
             <h2 className={styles.item}>
-              <span className={styles.accent}>³ Learn</span> with our workshops to
-              accelerate your web3 journey.
+              <span className={styles.accent}>³ Learn</span> with our workshops
+              to accelerate your web3 journey.
             </h2>
             <div className={styles.horizontalLine}>
               <GradientLine horizontal />
@@ -106,8 +106,8 @@ export default function Home() {
               <GradientLine horizontal />
             </div>
             <h2 className={styles.item}>
-              <span className={styles.accent}>³ Build</span> with us a DAO that is
-              going to be the home of web3 builders.
+              <span className={styles.accent}>³ Build</span> with us a DAO that
+              is going to be the home of web3 builders.
             </h2>
           </div>
         </Section>

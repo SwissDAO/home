@@ -16,7 +16,10 @@ const Footer = () => {
         <div className={styles.cta}>
           <Logo width={100} height={50} />
 
-          <p><span className={styles.accent}>Experience</span> the next generation of the internet.</p>
+          <p>
+            <span className={styles.accent}>Experience</span> the next
+            generation of the internet.
+          </p>
         </div>
 
         <div className={styles.column}>
@@ -49,7 +52,6 @@ const Footer = () => {
 
       <div className={styles.subfooter}>
         &copy; {new Date().getFullYear()} swissDAO. All rights reserved.
-
         <div className={styles.socials}>
           <Link
             href="https://www.linkedin.com/company/swissdaospace/"
@@ -66,10 +68,7 @@ const Footer = () => {
             <FaTwitter fontSize="1.25rem" />
           </Link>
 
-          <Link
-            href="https://discord.com/invite/5kvQ3Q6G4x"
-            target="_blank"
-          >
+          <Link href="https://discord.com/invite/5kvQ3Q6G4x" target="_blank">
             <FaDiscord fontSize="1.25rem" />
           </Link>
         </div>

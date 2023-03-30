@@ -2,7 +2,11 @@
 
 .gradient {
   width: 100%;
-  background: -webkit-linear-gradient(0deg, var(--color-accent), var(--color-gradient-fadeout));
+  background: -webkit-linear-gradient(
+    0deg,
+    var(--color-accent),
+    var(--color-gradient-fadeout)
+  );
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
