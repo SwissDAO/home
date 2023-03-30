@@ -1,3 +1,5 @@
+@import 'sass-mq';
+
 .grid {
   width: 100%;
   display: grid;
@@ -14,6 +16,11 @@
     &:last-child {
       grid-row: 3;
     }
+  }
+
+  @include mq($until: 750px) {
+    display: flex;
+    flex-direction: column;
   }
 }
 
