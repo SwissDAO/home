@@ -114,7 +114,7 @@ export default function Home() {
       </div>
 
       <Section noPadding>
-        <h2 ref={triggerRef}>
+        <h2 ref={triggerRef} className={styles.padding}>
           <span className={styles.accent}>DAOtize</span> the world with us!
         </h2>
 

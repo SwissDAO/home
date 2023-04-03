@@ -37,7 +37,6 @@
   }
 
   .horizontalLine {
-    height: 100%;
     width: 100%;
 
     @include mq($from: 750px) {
@@ -66,4 +65,8 @@
 
 .flag {
   transform-origin: 10px 40px;
+}
+
+.padding {
+  padding: 0 5em;
 }
