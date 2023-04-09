@@ -17,10 +17,10 @@ const Navbar = () => {
     //   label: 'Events',
     //   link: '/events'
     // },
-    {
-      label: 'Blog',
-      link: '/blog',
-    },
+    // {
+    //   label: 'Blog',
+    //   link: '/blog',
+    // },
     // {
     //   label: 'Podcast',
     //   link: '/podcast',
