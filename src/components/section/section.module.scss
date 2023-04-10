@@ -13,7 +13,7 @@
   }
 
   &:first-child {
-    height: calc(100vh - var(--nextui--navbarHeight));
+    height: calc(100vh - 6.25em);
     margin: 0;
   }
 }
