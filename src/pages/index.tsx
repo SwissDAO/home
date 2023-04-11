@@ -50,15 +50,15 @@ export default function Home() {
           builders with projects and join forces to build the new internet.
         </p>
 
-        <div className={styles.ctas}>
+        {/* <div className={styles.ctas}>
           <Button href="">
-            <span className={styles.gradient}>Join us³</span>
+            <span className={styles.gradient}>Join³</span>
           </Button>
 
           <Button href="">
-            <span className={styles.gradient}>Follow us³</span>
+            <span className={styles.gradient}>Follow³</span>
           </Button>
-        </div>
+        </div> */}
       </Section>
 
       <div className={styles.wrapper}>
