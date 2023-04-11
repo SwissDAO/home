@@ -17,6 +17,8 @@ export default function Layout({ children }: { children: ReactNode }) {
         <meta property="og:title" content={title} key="title" />
         <meta name="twitter:title" content={title} />
 
+        <meta name="robots" content="all" />
+
         <meta name="description" content={description} />
         <meta name="og:description" content={description} />
         <meta name="twitter:description" content={description} />
