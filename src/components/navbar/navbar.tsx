@@ -40,7 +40,6 @@ const Navbar = () => {
         <div className={styles.items}>
           {navItems.map((item, i) => renderNavItem(item, i))}
         </div>
-
       </nav>
       <GradientLine horizontal />
     </>

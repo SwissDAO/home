@@ -24,25 +24,27 @@ const Footer = () => {
 
         <div className={styles.column}>
           <h4>Community</h4>
-          <Link href={"/teaser"}>Blog</Link>
-          <Link href={"/teaser"}>Membership</Link>
-          <Link href={"https://www.meetup.com/swissdao/"} target='_blank'>Meetups</Link>
-          <Link href={"/teaser"}>Contact</Link>
+          <Link href={'/teaser'}>Blog</Link>
+          <Link href={'/teaser'}>Membership</Link>
+          <Link href={'https://www.meetup.com/swissdao/'} target="_blank">
+            Meetups
+          </Link>
+          <Link href={'/teaser'}>Contact</Link>
         </div>
 
         <div className={styles.column}>
           <h4>Labs</h4>
-          <Link href={"/teaser"}>About us</Link>
-          <Link href={"/teaser"}>Projects</Link>
-          <Link href={"/teaser"}>Vision</Link>
+          <Link href={'/teaser'}>About us</Link>
+          <Link href={'/teaser'}>Projects</Link>
+          <Link href={'/teaser'}>Vision</Link>
         </div>
 
         <div className={styles.column}>
           <h4>Resources</h4>
-          <Link href={"/teaser"}>Docs</Link>
-          <Link href={"/teaser"}>Changelog</Link>
-          <Link href={"/teaser"}>Brand</Link>
-          <Link href={"/teaser"}>Terms of Service</Link>
+          <Link href={'/teaser'}>Docs</Link>
+          <Link href={'/teaser'}>Changelog</Link>
+          <Link href={'/teaser'}>Brand</Link>
+          <Link href={'/teaser'}>Terms of Service</Link>
         </div>
 
         <div className={styles.gradientLine}>

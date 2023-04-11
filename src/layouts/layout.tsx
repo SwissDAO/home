@@ -4,10 +4,11 @@ import Footer from '../components/footer/footer';
 import Navbar from '../components/navbar/navbar';
 
 export default function Layout({ children }: { children: ReactNode }) {
-
   const title = 'swissDAO - The Swiss Web3 Builder Community.³';
-  const description = 'Our goal is to connect builders with projects and join forces to build the new internet.';
-  const keywords = 'swissDAO, swissdao, daosuisse, suissedao, web3, switzerland, builder, community, decentralized finance, blockchain,';
+  const description =
+    'Our goal is to connect builders with projects and join forces to build the new internet.';
+  const keywords =
+    'swissDAO, swissdao, daosuisse, suissedao, web3, switzerland, builder, community, decentralized finance, blockchain,';
   const ogImage = 'https://swissdao.space/favicon.ico';
 
   return (

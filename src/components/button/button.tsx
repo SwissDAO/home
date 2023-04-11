@@ -1,6 +1,6 @@
-import { ReactNode } from "react";
-import styles from "./button.module.scss";
-import Link from "next/link";
+import { ReactNode } from 'react';
+import styles from './button.module.scss';
+import Link from 'next/link';
 
 type Props = {
   children: ReactNode;
@@ -16,6 +16,6 @@ export default function Button({ children, href, onSubmit }: Props) {
   ) : (
     <button className={styles.button} onSubmit={onSubmit}>
       {children}
-    </button >
+    </button>
   );
-};
+}

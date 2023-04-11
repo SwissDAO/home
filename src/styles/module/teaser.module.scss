@@ -1,13 +1,19 @@
 .animatedGradient {
   text-align: center;
-  
-  background: linear-gradient(to right, var(--color-background) 20%, var(--color-accent) 40%, var(--color-gradient-fadeout) 60%, var(--color-background) 80%);
+
+  background: linear-gradient(
+    to right,
+    var(--color-background) 20%,
+    var(--color-accent) 40%,
+    var(--color-gradient-fadeout) 60%,
+    var(--color-background) 80%
+  );
   background-size: 200% auto;
-  
+
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  
+
   animation: shine 2s linear infinite;
 }
 

@@ -1,4 +1,4 @@
-import Section from "../components/section/section";
+import Section from '../components/section/section';
 import styles from '../styles/module/teaser.module.scss';
 
 export default function Teaser() {
@@ -6,5 +6,5 @@ export default function Teaser() {
     <Section>
       <h1 className={styles.animatedGradient}>Coming soon!</h1>
     </Section>
-  )
-};
+  );
+}
