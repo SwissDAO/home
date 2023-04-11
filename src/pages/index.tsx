@@ -6,6 +6,7 @@ import GradientLine from '../components/gradient-line/gradient-line';
 import { LogoMountain } from '../components/logo-mountain/logo-mountain';
 import Section from '../components/section/section';
 import styles from '../styles/module/home.module.scss';
+import Button from '../components/button/button';
 
 export default function Home() {
   gsap.registerPlugin(ScrollTrigger);
@@ -44,10 +45,20 @@ export default function Home() {
         <h1>The Swiss Web3 Builder</h1>
         <h1 className={styles.gradient}>Community.³</h1>
 
-        <p className="lead">
+        <p>
           <span className={styles.gradient}>³</span> Our goal is to connect
           builders with projects and join forces to build the new internet.
         </p>
+
+        <div className={styles.ctas}>
+          <Button href="">
+            <span className={styles.gradient}>Join us³</span>
+          </Button>
+
+          <Button href="">
+            <span className={styles.gradient}>Follow us³</span>
+          </Button>
+        </div>
       </Section>
 
       <div className={styles.wrapper}>
