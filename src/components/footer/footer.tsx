@@ -24,25 +24,25 @@ const Footer = () => {
 
         <div className={styles.column}>
           <h4>Community</h4>
-          <p>Blog</p>
-          <p>Membership</p>
-          <p>Meetups</p>
-          <p>Contact</p>
+          <Link href={"/teaser"}>Blog</Link>
+          <Link href={"/teaser"}>Membership</Link>
+          <Link href={"https://www.meetup.com/swissdao/"} target='_blank'>Meetups</Link>
+          <Link href={"/teaser"}>Contact</Link>
         </div>
 
         <div className={styles.column}>
           <h4>Labs</h4>
-          <p>About us</p>
-          <p>Projects</p>
-          <p>Vision</p>
+          <Link href={"/teaser"}>About us</Link>
+          <Link href={"/teaser"}>Projects</Link>
+          <Link href={"/teaser"}>Vision</Link>
         </div>
 
         <div className={styles.column}>
           <h4>Resources</h4>
-          <p>Docs</p>
-          <p>Changelog</p>
-          <p>Brand</p>
-          <p>Terms of Service</p>
+          <Link href={"/teaser"}>Docs</Link>
+          <Link href={"/teaser"}>Changelog</Link>
+          <Link href={"/teaser"}>Brand</Link>
+          <Link href={"/teaser"}>Terms of Service</Link>
         </div>
 
         <div className={styles.gradientLine}>
