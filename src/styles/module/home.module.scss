@@ -39,9 +39,9 @@
   .horizontalLine {
     width: 100%;
 
-    @include mq($from: 750px) {
-      display: none;
-    }
+    // @include mq($from: 750px) {
+    //   display: none;
+    // }
   }
 }
 
@@ -51,9 +51,9 @@
   left: 50%;
   height: 100%;
 
-  @include mq($until: 750px) {
-    display: none;
-  }
+  // @include mq($until: 750px) {
+  //   display: none;
+  // }
 }
 
 .image {
@@ -75,4 +75,16 @@
   margin-top: 4em;
   display: flex;
   gap: 2em;
+}
+
+.desktopHidden {
+  @include mq($from: 750px) {
+    display: none;
+  }
+}
+
+.mobileHidden {
+  @include mq($until: 750px) {
+    display: none;
+  }
 }

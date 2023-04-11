@@ -63,7 +63,7 @@ export default function Home() {
 
       <div className={styles.wrapper}>
         <Section>
-          <div className={styles.gradientLine}>
+          <div className={`${styles.gradientLine} ${styles.mobileHidden}`}>
             <GradientLine />
           </div>
 
@@ -75,7 +75,7 @@ export default function Home() {
               width={400}
               height={300}
             />
-            <div className={styles.horizontalLine}>
+            <div className={`${styles.horizontalLine} ${styles.desktopHidden}`}>
               <GradientLine horizontal />
             </div>
             <h2 className={styles.item}>
@@ -86,14 +86,11 @@ export default function Home() {
         </Section>
 
         <Section>
-          <div className={styles.section}>
+          <div className={`${styles.section} ${styles.mobileHidden}`}>
             <h2 className={styles.item}>
               <span className={styles.accent}>³ Learn</span> with our workshops
               to accelerate your web3 journey.
             </h2>
-            <div className={styles.horizontalLine}>
-              <GradientLine horizontal />
-            </div>
             <Image
               className={styles.item}
               src="/images/illustration_learn.svg"
@@ -101,6 +98,23 @@ export default function Home() {
               width={300}
               height={300}
             />
+          </div>
+
+          <div className={`${styles.section} ${styles.desktopHidden}`}>
+            <Image
+              className={styles.item}
+              src="/images/illustration_learn.svg"
+              alt="Illustration Build"
+              width={300}
+              height={300}
+            />
+            <div className={styles.horizontalLine}>
+              <GradientLine horizontal />
+            </div>
+            <h2 className={styles.item}>
+              <span className={styles.accent}>³ Learn</span> with our workshops
+              to accelerate your web3 journey.
+            </h2>
           </div>
         </Section>
 
@@ -113,7 +127,7 @@ export default function Home() {
               width={300}
               height={300}
             />
-            <div className={styles.horizontalLine}>
+            <div className={`${styles.horizontalLine} ${styles.desktopHidden}`}>
               <GradientLine horizontal />
             </div>
             <h2 className={styles.item}>
