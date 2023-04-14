@@ -5,12 +5,13 @@ import Link from 'next/link';
 type Props = {
   children: ReactNode;
   href?: string;
+  target?: string;
   onSubmit?: () => void;
 };
 
-export default function Button({ children, href, onSubmit }: Props) {
+export default function Button({ children, href, target, onSubmit }: Props) {
   return href ? (
-    <Link href={href} className={styles.button}>
+    <Link href={href} target={target} className={styles.button}>
       {children}
     </Link>
   ) : (

@@ -2,11 +2,11 @@ import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 import Image from 'next/image';
 import { useEffect, useRef } from 'react';
+import Button from '../components/button/button';
 import GradientLine from '../components/gradient-line/gradient-line';
 import { LogoMountain } from '../components/logo-mountain/logo-mountain';
 import Section from '../components/section/section';
 import styles from '../styles/module/home.module.scss';
-import Button from '../components/button/button';
 
 export default function Home() {
   gsap.registerPlugin(ScrollTrigger);
@@ -50,15 +50,15 @@ export default function Home() {
           builders with projects and join forces to build the new internet.
         </p>
 
-        {/* <div className={styles.ctas}>
-          <Button href="">
-            <span className={styles.gradient}>Join³</span>
+        <div className={styles.ctas}>
+          <Button href="https://5j8cqyz2500.typeform.com/to/PSs8d4ea" target="_blank">
+            <span className={styles.gradient}>Join</span>
           </Button>
 
-          <Button href="">
-            <span className={styles.gradient}>Follow³</span>
+          <Button href="https://linktr.ee/swissdao" target="_blank">
+            <span className={styles.gradient}>Follow</span>
           </Button>
-        </div> */}
+        </div>
       </Section>
 
       <div className={styles.wrapper}>
