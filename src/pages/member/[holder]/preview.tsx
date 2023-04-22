@@ -1,7 +1,7 @@
 import { useRouter } from "next/router";
-import styles from "../styles/membership.module.scss";
-import MembercardFront from "../../../components/membercard/membercard-front";
-import MembercardBack from "../../../components/membercard/membercard-back";
+import styles from "@/styles/module/preview.module.scss";
+import MembercardFront from "@/components/membercard/membercard-front";
+import MembercardBack from "@/components/membercard/membercard-back";
 
 export default function MemberCardPreview() {
   const router = useRouter();
