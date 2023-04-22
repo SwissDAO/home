@@ -1,5 +1,5 @@
-import Section from '../components/section/section';
-import styles from '../styles/module/teaser.module.scss';
+import Section from '@/components/section/section';
+import styles from '@/styles/module/teaser.module.scss';
 
 export default function Teaser() {
   return (

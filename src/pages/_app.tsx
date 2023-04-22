@@ -19,8 +19,8 @@ import type { AppProps } from 'next/app';
 import { configureChains, createClient, WagmiConfig } from 'wagmi';
 import { infuraProvider } from 'wagmi/providers/infura';
 import { publicProvider } from 'wagmi/providers/public';
-import Layout from '../layouts/layout';
-import '../styles/globals.scss';
+import Layout from '@/layouts/layout';
+import '@/styles/globals.scss';
 
 const avenirMedium = localFont({
   src: '../../public/fonts/Avenir-Medium.woff2',

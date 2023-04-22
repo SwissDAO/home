@@ -1,8 +1,7 @@
 import Link from 'next/link';
-import { FaLinkedin, FaGithub, FaTwitter, FaDiscord } from 'react-icons/fa';
+import { FaDiscord, FaGithub, FaLinkedin, FaTwitter } from 'react-icons/fa';
 import GradientLine from '../gradient-line/gradient-line';
 import Logo from '../logo/logo';
-import Section from '../section/section';
 import styles from './footer.module.scss';
 
 const Footer = () => {

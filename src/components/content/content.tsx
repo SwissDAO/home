@@ -8,7 +8,7 @@ import {
   useContractWrite,
   usePrepareContractWrite,
 } from 'wagmi';
-import { CONFIG } from '../../shared/const';
+import { CONFIG } from '@/shared/const';
 import Feature from '../feature/feature';
 import FeatureList from '../feature-list/feature-list';
 import Mint from '../mint/mint';

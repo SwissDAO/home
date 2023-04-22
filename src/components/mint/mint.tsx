@@ -5,7 +5,7 @@ import {
   usePrepareContractWrite,
   useWaitForTransaction,
 } from 'wagmi';
-import { CONFIG } from '../../shared/const';
+import { CONFIG } from '@/shared/const';
 
 const Mint = () => {
   const { address, isConnected } = useAccount();

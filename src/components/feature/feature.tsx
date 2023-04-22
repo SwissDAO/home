@@ -1,5 +1,5 @@
 import { Card, Text, Image, Row, Button } from '@nextui-org/react';
-import { Feature as FeatureType } from '../../shared/models';
+import { Feature as FeatureType } from '@/shared/models';
 
 type Props = {
   feature: FeatureType;
