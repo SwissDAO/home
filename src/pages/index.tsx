@@ -43,7 +43,7 @@ export default function Home() {
     <>
       <Section>
         <h1>The Swiss Web3 Builder</h1>
-        <h1 className={styles.gradient}>Community.³</h1>
+        <h1 className={styles.gradient}>Community.³ &zwnj;</h1>
 
         <p>
           <span className={styles.gradient}>³</span> Our goal is to connect

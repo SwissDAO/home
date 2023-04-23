@@ -4,22 +4,25 @@ import styles from './navbar.module.scss';
 const Navbar = () => {
   const navItems = [
     {
-      // label: isConnected ? 'Your Membership' : 'Membership',
       label: 'Membership',
       link: '/membership',
     },
-    // {
-    //   label: 'Events',
-    //   link: '/events'
-    // },
-    // {
-    //   label: 'Blog',
-    //   link: '/blog',
-    // },
-    // {
-    //   label: 'Podcast',
-    //   link: '/podcast',
-    // },
+    {
+      label: 'Events',
+      link: '/events'
+    },
+    {
+      label: 'Blog',
+      link: '/blog',
+    },
+    {
+      label: 'Podcast',
+      link: '/podcast',
+    },
+    {
+      label: 'Profile',
+      link: '',
+    },
   ];
 
   const renderNavItem = (item: { label: string; link: string }, i: number) => (

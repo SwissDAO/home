@@ -1,7 +1,6 @@
 @import 'sass-mq';
 
 .gradient {
-  width: 100%;
   background: -webkit-linear-gradient(
     0deg,
     var(--color-accent),
@@ -38,10 +37,6 @@
 
   .horizontalLine {
     width: 100%;
-
-    // @include mq($from: 750px) {
-    //   display: none;
-    // }
   }
 }
 
@@ -50,10 +45,6 @@
   top: 0;
   left: 50%;
   height: 100%;
-
-  // @include mq($until: 750px) {
-  //   display: none;
-  // }
 }
 
 .image {
