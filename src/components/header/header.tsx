@@ -14,7 +14,10 @@ const Header = () => {
 
         <Navbar />
       </header>
-      <GradientLine horizontal />
+
+      <div className={styles.wrapper}>
+        <GradientLine horizontal />
+      </div>
     </>
   );
 };

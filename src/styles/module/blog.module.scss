@@ -1,0 +1,14 @@
+@import 'sass-mq';
+
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10em 15em;
+}
+
+.header {
+  display: inherit;
+  flex-direction: inherit;
+  align-items: inherit;
+}
