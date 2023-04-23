@@ -15,7 +15,7 @@ const ActiveLink = ({
   const router = useRouter();
 
   return (
-    <Link className={`${className ?? ''} ${router.pathname === props.href ? styles.active : ''}`} {...props}>
+    <Link className={`${className ?? ''} ${router.pathname === props.href && router.pathname !== '/teaser' ? styles.active : ''}`} {...props}>
       {children}
     </Link>
   )
