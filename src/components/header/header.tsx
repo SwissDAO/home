@@ -9,7 +9,7 @@ const Header = () => {
     <>
       <header className={styles.header}>
         <Link href="/">
-          <Logo width={128} height={128} />
+          <Logo className={styles.logo} width={128} height={128} />
         </Link>
 
         <Navbar />

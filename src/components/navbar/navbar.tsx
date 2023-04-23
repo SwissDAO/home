@@ -26,7 +26,7 @@ const Navbar = () => {
   ];
 
   const renderNavItem = (item: { label: string; link: string }, i: number) => (
-    <Link key={i} href={item.link}>
+    <Link key={i} href={item.link} className={styles.item}>
       {item.label}
     </Link>
   );

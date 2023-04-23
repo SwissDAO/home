@@ -1,7 +1,30 @@
+@import 'sass-mq';
+
 .header {
+  position: relative;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   padding: 0 5em;
   height: 6.25em;
+  
+  @include mq($until: 750px) {
+    justify-content: space-between;
+  }
+
+  @include mq($until: 600px) {
+    padding: 0 2.5em;
+  }
+
+  @include mq($until: 400px) {
+    padding: 0 1em;
+  }
+}
+
+.logo {
+  @include mq($from: 750px) {
+    position: absolute;
+    top: -0.75em;
+    left: 2em;
+  }
 }

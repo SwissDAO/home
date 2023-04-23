@@ -1,3 +1,5 @@
+@import 'sass-mq';
+
 .navbar {
   display: flex;
   align-items: center;
@@ -7,5 +9,20 @@
   border: 1px solid rgb(46, 47, 56);
   border-radius: 1rem; 
   align-items: center;
+}
+
+.item {
+  &:nth-child(3),
+  &:nth-child(4) {
+    @include mq($until: 750px) {
+      display: none;
+    }
+  }
+
+  &:nth-child(2) {
+    @include mq($until: 600px) {
+      display: none;
+    }
+  }
 }
 
