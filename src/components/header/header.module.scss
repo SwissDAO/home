@@ -8,23 +8,22 @@
   padding: 0 5em;
   height: 6.25em;
   
-  @include mq($until: 750px) {
+  @include mq($until: 900px) {
     justify-content: space-between;
   }
 
-  @include mq($until: 600px) {
-    padding: 0 2.5em;
-  }
-
-  @include mq($until: 400px) {
+  @include mq($until: 800px) {
     padding: 0 1em;
   }
 }
 
 .logo {
+  margin-top: 0.45em;
+  
   @include mq($from: 750px) {
     position: absolute;
-    top: -0.75em;
+    top: -0.90em;
     left: 2em;
+    margin: 0;
   }
 }
