@@ -10,15 +10,15 @@ const Navbar = () => {
     },
     {
       label: 'Events',
-      link: '/events'
+      link: '/teaser'
     },
     {
       label: 'Blog',
-      link: '/blog',
+      link: '/teaser',
     },
     {
       label: 'Podcast',
-      link: '/podcast',
+      link: '/teaser',
     },
   ];
 
