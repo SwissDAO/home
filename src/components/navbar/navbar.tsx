@@ -1,7 +1,5 @@
 import Link from 'next/link';
-import Logo from '../logo/logo';
 import styles from './navbar.module.scss';
-import GradientLine from '../gradient-line/gradient-line';
 
 const Navbar = () => {
   const navItems = [
@@ -31,18 +29,9 @@ const Navbar = () => {
   );
 
   return (
-    <>
-      <nav className={styles.navbar}>
-        <Link href="/">
-          <Logo width={128} height={128} />
-        </Link>
-
-        <div className={styles.items}>
-          {navItems.map((item, i) => renderNavItem(item, i))}
-        </div>
-      </nav>
-      <GradientLine horizontal />
-    </>
+    <nav className={styles.navbar}>
+      {navItems.map((item, i) => renderNavItem(item, i))}
+    </nav>
   );
 };
 

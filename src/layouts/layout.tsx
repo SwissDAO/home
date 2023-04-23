@@ -1,7 +1,7 @@
+import Header from '@/components/header/header';
 import Head from 'next/head';
 import { ReactNode } from 'react';
 import Footer from '../components/footer/footer';
-import Navbar from '../components/navbar/navbar';
 
 export default function Layout({ children }: { children: ReactNode }) {
   const title = 'swissDAO - The Swiss Web3 Builder Community.³';
@@ -32,7 +32,7 @@ export default function Layout({ children }: { children: ReactNode }) {
         <meta name="copyright" content="swissDAO" />
         <meta name="twitter:card" content="summary_large_image" />
       </Head>
-      <Navbar />
+      <Header />
       <main>{children}</main>
       <Footer />
     </>
