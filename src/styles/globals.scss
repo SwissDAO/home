@@ -49,7 +49,11 @@ h6 {
 a {
   color: inherit;
   text-decoration: none;
-  font-family: var(--nextui-fonts-sans);
+  transition: color 0.25s ease;
+
+  &:hover {
+    color: var(--color-accent);
+  }
 }
 
 * {
