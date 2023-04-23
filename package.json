@@ -14,7 +14,7 @@
     "@heroicons/react": "^2.0.17",
     "@next/font": "^13.3.1",
     "@nextui-org/react": "^1.0.0-beta.12",
-    "@rainbow-me/rainbowkit": "^0.12.9",
+    "@rainbow-me/rainbowkit": "^0.12.7",
     "@vercel/analytics": "^1.0.0",
     "eslint": "8.39.0",
     "eslint-config-next": "13.3.1",
