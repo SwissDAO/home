@@ -1,4 +1,4 @@
-import Link from 'next/link';
+import ActiveLink from '../active-link/active-link';
 import styles from './navbar.module.scss';
 
 const Navbar = () => {
@@ -26,9 +26,9 @@ const Navbar = () => {
   ];
 
   const renderNavItem = (item: { label: string; link: string }, i: number) => (
-    <Link key={i} href={item.link} className={styles.item}>
+    <ActiveLink key={i} href={item.link} className={styles.item}>
       {item.label}
-    </Link>
+    </ActiveLink>
   );
 
   return (
