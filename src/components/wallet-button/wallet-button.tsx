@@ -1,5 +1,6 @@
+import styles from '@/styles/module/animated-text.module.scss';
 import { ConnectButton, useConnectModal } from "@rainbow-me/rainbowkit";
-import Button from "../button/button";
+import Button from '../button/button';
 
 const WalletButton = () => {
   const { openConnectModal } = useConnectModal();
@@ -11,10 +12,8 @@ const WalletButton = () => {
   ) => {
     return (
       <>
-        <Button
-          onClick={onClick}
-        >
-          {label}
+        <Button onClick={onClick}>
+          <span className={styles.animatedGradient}>{label}</span>
         </Button>
       </>
     );

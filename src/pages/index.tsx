@@ -51,11 +51,11 @@ export default function Home() {
         </p>
 
         <div className={styles.ctas}>
-          <Button href="https://5j8cqyz2500.typeform.com/to/PSs8d4ea" target="_blank">
+          <Button border href="https://5j8cqyz2500.typeform.com/to/PSs8d4ea" target="_blank">
             <span className={styles.gradient}>Join</span>
           </Button>
 
-          <Button href="https://linktr.ee/swissdao" target="_blank">
+          <Button border href="https://linktr.ee/swissdao" target="_blank">
             <span className={styles.gradient}>Follow</span>
           </Button>
         </div>
