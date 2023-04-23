@@ -1,12 +1,8 @@
 .button {
   padding: 0.5em 2em;
-  border: none;
+  border: 2px solid var(--color-foreground);
   border-radius: 100px;
   background-color: transparent;
   color: inherit;
   cursor: pointer !important;
-  
-  &[data-border='true'] {
-    border: 2px solid var(--color-foreground);
-  }
 }
