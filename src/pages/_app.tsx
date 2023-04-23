@@ -1,3 +1,5 @@
+import Layout from '@/layouts/layout';
+import '@/styles/globals.scss';
 import localFont from '@next/font/local';
 import { createTheme, NextUIProvider } from '@nextui-org/react';
 import {
@@ -15,12 +17,12 @@ import {
 import { Analytics } from '@vercel/analytics/react';
 import { goerli } from '@wagmi/core/chains';
 import merge from 'lodash/merge';
+import type { NextPage } from 'next';
 import type { AppProps } from 'next/app';
+import type { ReactElement, ReactNode } from 'react';
 import { configureChains, createClient, WagmiConfig } from 'wagmi';
 import { infuraProvider } from 'wagmi/providers/infura';
 import { publicProvider } from 'wagmi/providers/public';
-import Layout from '@/layouts/layout';
-import '@/styles/globals.scss';
 
 const avenirMedium = localFont({
   src: '../../public/fonts/Avenir-Medium.woff2',
@@ -112,7 +114,17 @@ const nextUiTheme = createTheme({
   },
 });
 
-export default function App({ Component, pageProps }: AppProps) {
+export type NextPageWithLayout<P = {}, IP = P> = NextPage<P, IP> & {
+  getLayout?: (page: ReactElement) => ReactNode
+}
+
+type AppPropsWithLayout = AppProps & {
+  Component: NextPageWithLayout
+}
+
+export default function App({ Component, pageProps }: AppPropsWithLayout) {
+  const getLayout = Component.getLayout ?? (page => <Layout>{page}</Layout>);
+
   return (
     <NextUIProvider theme={nextUiTheme}>
       <WagmiConfig client={wagmiClient}>
@@ -128,9 +140,7 @@ export default function App({ Component, pageProps }: AppProps) {
               --font-strong: ${avenirHeavy.style.fontFamily};
             }
           `}</style>
-          <Layout>
-            <Component {...pageProps} />
-          </Layout>
+          {getLayout(<Component {...pageProps} />)}
           <Analytics />
         </RainbowKitProvider>
       </WagmiConfig>

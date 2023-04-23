@@ -1,7 +1,9 @@
-import { useRouter } from "next/router";
-import styles from "@/styles/module/preview.module.scss";
-import MembercardFront from "@/components/membercard/membercard-front";
 import MembercardBack from "@/components/membercard/membercard-back";
+import MembercardFront from "@/components/membercard/membercard-front";
+import PreviewLayout from "@/layouts/previewLayout";
+import styles from "@/styles/module/preview.module.scss";
+import { useRouter } from "next/router";
+import { ReactElement } from "react";
 
 export default function MemberCardPreview() {
   const router = useRouter();
@@ -18,5 +20,13 @@ export default function MemberCardPreview() {
         </div>
       </div>
     </div>
+  );
+}
+
+MemberCardPreview.getLayout = function getLayout(page: ReactElement) {
+  return (
+    <PreviewLayout>
+      {page}
+    </PreviewLayout>
   );
 }
