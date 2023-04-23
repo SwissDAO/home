@@ -1,4 +1,5 @@
 import ActiveLink from '../active-link/active-link';
+import WalletButton from '../wallet-button/wallet-button';
 import styles from './navbar.module.scss';
 
 const Navbar = () => {
@@ -19,10 +20,6 @@ const Navbar = () => {
       label: 'Podcast',
       link: '/podcast',
     },
-    {
-      label: 'Profile',
-      link: '',
-    },
   ];
 
   const renderNavItem = (item: { label: string; link: string }, i: number) => (
@@ -34,6 +31,7 @@ const Navbar = () => {
   return (
     <nav className={styles.navbar}>
       {navItems.map((item, i) => renderNavItem(item, i))}
+      <WalletButton />
     </nav>
   );
 };

@@ -1,8 +1,8 @@
 import Link from 'next/link';
-import Logo from '../logo/logo';
-import styles from './header.module.scss';
-import Navbar from '../navbar/navbar';
 import GradientLine from '../gradient-line/gradient-line';
+import Logo from '../logo/logo';
+import Navbar from '../navbar/navbar';
+import styles from './header.module.scss';
 
 const Header = () => {
   return (
