@@ -3,7 +3,7 @@ import Head from 'next/head';
 import { ReactNode } from 'react';
 import Footer from '../components/footer/footer';
 
-export default function Layout({ children }: { children: ReactNode }) {
+const Layout = ({ children }: { children: ReactNode }) => {
   const title = 'swissDAO - The Swiss Web3 Builder Community.³';
   const description =
     'Our goal is to connect builders with projects and join forces to build the new internet.';
@@ -38,3 +38,5 @@ export default function Layout({ children }: { children: ReactNode }) {
     </>
   );
 }
+
+export default Layout;

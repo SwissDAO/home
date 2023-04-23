@@ -2,7 +2,7 @@ type Props = {
   holder: string;
 };
 
-export default function MembercardFront({ holder }: Props) {
+const MembercardFront = ({ holder }: Props) => {
   return (
     <svg width="349" height="212" viewBox="0 0 349 212" fill="none" xmlns="http://www.w3.org/2000/svg">
       <g clip-path="url(#clip0_537_604)">
@@ -78,3 +78,5 @@ export default function MembercardFront({ holder }: Props) {
     </svg>
   );
 };
+
+export default MembercardFront;

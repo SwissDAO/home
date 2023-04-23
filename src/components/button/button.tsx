@@ -6,17 +6,19 @@ type Props = {
   children: ReactNode;
   href?: string;
   target?: string;
-  onSubmit?: () => void;
+  onClick?: () => void;
 };
 
-export default function Button({ children, href, target, onSubmit }: Props) {
+const Button = ({ children, href, target, onClick }: Props) => {
   return href ? (
     <Link href={href} target={target} className={styles.button}>
       {children}
     </Link>
   ) : (
-    <button className={styles.button} onSubmit={onSubmit}>
+    <button className={styles.button} onClick={onClick}>
       {children}
     </button>
   );
 }
+
+export default Button;

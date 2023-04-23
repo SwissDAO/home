@@ -21,4 +21,4 @@ const ActiveLink = ({
   )
 }
 
-export default ActiveLink
+export default ActiveLink;

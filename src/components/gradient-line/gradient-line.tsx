@@ -4,7 +4,7 @@ type Props = {
   horizontal?: boolean;
 };
 
-export default function GradientLine({ horizontal }: Props) {
+const GradientLine = ({ horizontal }: Props) => {
   return (
     <div className={styles.container} data-horizontal={horizontal}>
       <div className={styles.gradient} data-horizontal={horizontal} />
@@ -12,3 +12,5 @@ export default function GradientLine({ horizontal }: Props) {
     </div>
   );
 }
+
+export default GradientLine;

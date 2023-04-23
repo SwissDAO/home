@@ -4,7 +4,7 @@ type Props = {
   className: string;
 };
 
-export const LogoMountain = forwardRef(
+const LogoMountain = forwardRef(
   ({ className }: Props, ref: LegacyRef<SVGGElement>) => (
     <svg
       width="100%"
@@ -287,3 +287,5 @@ export const LogoMountain = forwardRef(
     </svg>
   )
 );
+
+export default LogoMountain;

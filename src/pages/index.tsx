@@ -4,9 +4,9 @@ import Image from 'next/image';
 import { useEffect, useRef } from 'react';
 import Button from '@/components/button/button';
 import GradientLine from '@/components/gradient-line/gradient-line';
-import { LogoMountain } from '@/components/logo-mountain/logo-mountain';
 import Section from '@/components/section/section';
 import styles from '@/styles/module/home.module.scss';
+import LogoMountain from '@/components/logo-mountain/logo-mountain';
 
 export default function Home() {
   gsap.registerPlugin(ScrollTrigger);

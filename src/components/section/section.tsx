@@ -6,10 +6,12 @@ type Props = {
   noPadding?: boolean;
 };
 
-export default function Section({ children, noPadding }: Props) {
+const Section = ({ children, noPadding }: Props) => {
   return (
     <section className={styles.section} data-noPadding={noPadding}>
       {children}
     </section>
   );
 }
+
+export default Section;
