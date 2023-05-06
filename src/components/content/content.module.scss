@@ -9,7 +9,7 @@
   height: 100%;
 
   @include mq($until: 1000px) {
-    padding: 10em 7.5em;
+    padding: 10em 12.5em;
   }
 
   @include mq($until: 750px) {
