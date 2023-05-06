@@ -7,6 +7,18 @@
   padding: 10em 15em;
   width: 100%;
   height: 100%;
+
+  @include mq($until: 1000px) {
+    padding: 10em 7.5em;
+  }
+
+  @include mq($until: 750px) {
+    padding: 10em 5em;
+  }
+
+  @include mq($until: 500px) {
+    padding: 5em 2em;
+  }
 }
 
 .innerContent {
@@ -26,6 +38,11 @@
 .featured {
   width: 100%;
   height: 31.25em;
+  margin-bottom: 5em;
+
+  @include mq($until: 750px) {
+    height: 100%;
+  }
 }
 
 .image {
@@ -42,10 +59,16 @@
   position: relative;
   height: 100%;
   width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 
 .posts {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 2em;
+  gap: 5em 2em;
+  
+  @include mq($from: 750px) {
+    grid-template-columns: 1fr 1fr;
+  }
 }

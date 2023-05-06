@@ -1,4 +1,3 @@
-import Avatar from '@/components/avatar/avatar';
 import Creator from '@/components/creator/creator';
 import styles from '@/styles/module/blog.module.scss';
 import homeStyles from '@/styles/module/home.module.scss';
@@ -12,7 +11,7 @@ export default function Blog() {
         <Image src={'/images/blog.png'} alt='' fill />
       </div>
 
-      <span className={styles.tag}>Development</span>
+      <span className={homeStyles.gradient}>Development</span>
       <h3 className={styles.title}>Build Subgraph with The Graph</h3>
       <Creator label='Yves Boutellier' />
     </div>
