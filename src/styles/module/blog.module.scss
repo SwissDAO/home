@@ -5,10 +5,47 @@
   flex-direction: column;
   align-items: center;
   padding: 10em 15em;
+  width: 100%;
+  height: 100%;
+}
+
+.innerContent {
+  display: inherit;
+  flex-direction: inherit;
+  align-items: inherit;
+  max-width: 1250px;
 }
 
 .header {
   display: inherit;
   flex-direction: inherit;
   align-items: inherit;
+  margin-bottom: 5em;
+}
+
+.featured {
+  width: 100%;
+  height: 31.25em;
+}
+
+.image {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  
+  &[data-featured='false'] {
+    max-height: 250px;
+    max-width: 350px;
+  }
+}
+
+.post {
+  position: relative;
+  height: 100%;
+  width: 100%;
+}
+
+.posts {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2em;
 }

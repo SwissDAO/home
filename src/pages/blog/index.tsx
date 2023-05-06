@@ -1,25 +1,45 @@
-import Section from '@/components/section/section';
-import homeStyles from '@/styles/module/home.module.scss';
 import styles from '@/styles/module/blog.module.scss';
+import homeStyles from '@/styles/module/home.module.scss';
+import Image from 'next/image';
 
 export default function Blog() {
+
+  const renderBlogItem = (featured?: boolean) => (
+    <div className={styles.post}>
+      <div className={styles.image} data-featured={featured}>
+        <Image src={'/images/blog.png'} alt='' fill />
+      </div>
+
+      <span className={styles.tag}>Development</span>
+      <h3 className={styles.title}>Build Subgraph with The Graph</h3>
+      <div>
+
+      </div>
+    </div>
+  );
+
   return (
     <div className={styles.content}>
-      <div className={styles.header}>
-        <h1 className={homeStyles.gradient}>Blog.³ &zwnj;</h1>
+      <div className={styles.innerContent}>
+        <div className={styles.header}>
+          <h1 className={homeStyles.gradient}>Blog.³ &zwnj;</h1>
 
-        <p>
-          <span className={homeStyles.gradient}>³</span> Explore how
-          to do stuff and glimpse behind the scenes
-        </p>
-      </div>
+          <p>
+            <span className={homeStyles.gradient}>³</span> Explore how
+            to do stuff and glimpse behind the scenes
+          </p>
+        </div>
 
-      <div className={styles.featured}>
+        <div className={styles.featured}>
+          {renderBlogItem(true)}
+        </div>
 
-      </div>
-
-      <div className={styles.posts}>
-
+        <div className={styles.posts}>
+          {renderBlogItem()}
+          {renderBlogItem()}
+          {renderBlogItem()}
+          {renderBlogItem()}
+        </div>
       </div>
     </div>
   );
