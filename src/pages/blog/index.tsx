@@ -1,3 +1,5 @@
+import Avatar from '@/components/avatar/avatar';
+import Creator from '@/components/creator/creator';
 import styles from '@/styles/module/blog.module.scss';
 import homeStyles from '@/styles/module/home.module.scss';
 import Image from 'next/image';
@@ -12,9 +14,7 @@ export default function Blog() {
 
       <span className={styles.tag}>Development</span>
       <h3 className={styles.title}>Build Subgraph with The Graph</h3>
-      <div>
-
-      </div>
+      <Creator label='Yves Boutellier' />
     </div>
   );
 
